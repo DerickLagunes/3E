@@ -1,0 +1,31 @@
+.main-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: row; /* Organiza los elementos en filas */
+    height: 100vh; /* Ocupa el alto completo de la ventana  */
+
+    background-color: rgb(240, 195, 233);
+}
+
+.img {
+    width: 30%; 
+    height: 30%;
+    margin: 20px; /* Espacio entre los elementos */
+    
+
+
+
+} 
+
+img {
+    width: 250px;
+    height: auto; 
+    border-radius: 7px;
+    border: 4px cadetblue;
+  }
+
+ 
+  .info{
+    text-shadow: 1px 1px 1px #000000;
+  }

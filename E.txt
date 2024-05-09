@@ -1,5 +1,7 @@
 20233tn088 Aguilar Popoca Angel Daniel
 <<<<<<< HEAD
+20233tn094 Sanchez Rocha Leonardo Obed
+(====================================)
 20233tn089 Pedroza Garcia Axel Yoshua
 =======
 20233tn239 Cereth Alarcon Francisco

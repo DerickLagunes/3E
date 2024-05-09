@@ -1,2 +1,6 @@
 20233tn088 Aguilar Popoca Angel Daniel
+<<<<<<< HEAD
 20233tn239 Cereth Alarcon Francisco
+=======
+20233TN119 Garcia Guadarrama Edwin Yair
+>>>>>>> 1d59d0ff5f7ad1e1fadd8e1b1f0b0165c1d5337d

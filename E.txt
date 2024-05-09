@@ -40,3 +40,4 @@
 20233tn063 Roque Ocampo Maximiliano
 <<<<<<<<<<<<<<<<<<<<
 20233tn100 Vargas Lopez Yoni Gabriel 
+20233tn130 Arizmendi Aguilar Ignacio Isai

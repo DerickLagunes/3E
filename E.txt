@@ -7,3 +7,5 @@
 20233tn121 Onofre Badillo Mauricio
 <<<<<<< 
 20233tn102 Gonzaga Castañeda Cristian Amauri
+<<<<<<<<
+20233tn075 Mondragón Quintanar Alan

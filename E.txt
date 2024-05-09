@@ -22,4 +22,11 @@
 <<<<<<<<
 20233tn075 Mondragón Quintanar Alan
 >>>>>>> 995e5d0efb56d58cedd7b14af2342ce47e03fac0
+<<<<<<< HEAD
 >>>>>>> 8b576235307c433d40ba29ebe8b0ee7a0e80c720
+=======
+=======
+<<<<<<<<
+20233tn096 Román Jiménez Salem
+>>>>>>>>
+>>>>>>> 286a42d59c774d126b31e4f51c97371ee94cd7f3

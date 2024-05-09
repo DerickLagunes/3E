@@ -52,5 +52,9 @@
 ==================
 20233tn103 Ortuño Rogel Angel Gustavo
 =================
+<<<<<<< HEAD
 20233tn084 Millán Millán Janetthe 
 =================
+=======
+20233tn114 CATARINO MERINO FREDY JULIAN 
+>>>>>>> bf6e09111d5b0d5b9b382c9738e1b574aae5a391

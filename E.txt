@@ -60,3 +60,6 @@
 >>>>>>> bf6e09111d5b0d5b9b382c9738e1b574aae5a391
 
 20203tn106 Rodriguez Guzman Alexis Giovanni
+
+20233tn120 Mijangos Beltran Leonardo Daniel
+

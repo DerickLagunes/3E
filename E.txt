@@ -45,3 +45,6 @@
 20233tn130 Arizmendi Aguilar Ignacio Isai
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 20233tn118 Hernandez Trujillo Otmar
+==================
+20233tn103 Ortuño Rogel Angel Gustavo
+=================

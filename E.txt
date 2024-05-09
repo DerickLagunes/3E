@@ -5,7 +5,16 @@
 20233TN119 Garcia Guadarrama Edwin Yair
 >>>>>>> 
 20233tn121 Onofre Badillo Mauricio
+<<<<<<< HEAD
+<<<<<<<
+20233tn066 Esquivel Castillo Juan Pablo
+<<<<<<<
+=======
 <<<<<<< 
 20233tn102 Gonzaga Castañeda Cristian Amauri
+<<<<<<< HEAD
+>>>>>>> eaa327792c9638f1e44cdb0f95f4b8dab5b24dd9
+=======
 <<<<<<<<
 20233tn075 Mondragón Quintanar Alan
+>>>>>>> 995e5d0efb56d58cedd7b14af2342ce47e03fac0

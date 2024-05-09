@@ -2,6 +2,8 @@
 <<<<<<< HEAD
 20233tn127 Arizmendi Aguilar Cesar Leonardo
 <<<<<<<----------->>>>>>>>>>>>>
+20233tn073 Montes Patiño Oscar Uriel
+<<<<<<<----------->>>>>>>>>>>>>
 20233tn094 Sanchez Rocha Leonardo Obed
 ======
 20233tn089 Pedroza Garcia Axel Yoshua

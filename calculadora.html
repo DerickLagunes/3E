@@ -7,11 +7,23 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
-    <h1>Calculadora usando los elementos del <b>DOM</b> y <b>JS</b></h1>
+    <h1 id="titulo">Calculadora usando los elementos del <b>DOM</b> y <b>JS</b></h1>
     <br>
-    <b>Para obtener el texto de un elemento se usa la función:</b>
+    <b id="subtitulo">Para obtener el texto de un elemento se usa la función:</b>
     <br><br>
-    <code>document.getElementById("id").innerText;</code>
-    <p>Donde id es el id del elemento HTML que se pretende utilizar</p>
+    <code id="codigo">document.getElementById("id").innerText;</code>
+    <p id="texto">Donde id es el id del elemento HTML que se pretende utilizar</p>
+    <br>
+    <input id="n1" type="text" placeholder="introduce número 1" />
+    <input id="n2" type="text" placeholder="introduce número 2" />
+    <b>Resultado: <p id="res"></p></b>
+    <script>
+        function sumar(){
+            let n1 = parseInt(document.getElementById("n1").value);
+            let n2 = parseInt(document.getElementById("n2").value);
+            document.getElementById("res").innerText = n1 + n2;
+        }
+    </script>
+    <input type="button" value="SUMAR" onclick="sumar();" />
 </body>
 </html>

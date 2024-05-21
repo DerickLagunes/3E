@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Carrucel</h1>
+    <br><br>
+    <h1>Arizmendi Aguilar Cesar Leonardo</h1>
+    <br>
+
+    <img id="imagen" class="imagen" src="./img/monja.jpg" alt="Imagen saltarina"> 
+    <input class="imagen" type="button" value="Siguiente" onclick="avanzar()" />
+
+    <script>
+        let num = 1; 
+
+        function avanzar() {
+            num = num + 1;
+            if (num > 5) {
+                num = 1; 
+            }
+            Cambiar(num);
+        }
+
+        function Cambiar(cesar) {
+            let imagen = '';
+            if (cesar == 1) {
+                imagen = './img/perro.jpeg';
+            } else if (cesar == 2) {
+                imagen = './img/rana.jpeg';
+            } else if (cesar == 3) {
+                imagen = './img/pollo.jpg';
+            } else if (cesar == 4) {
+                imagen = './img/monja.jpg';
+            } else if (cesar == 5) {
+                imagen = './img/cars.jpg';
+            }
+
+            document.getElementById('imagen').src = imagen;  
+            
+        }
+    </script>
+    <body style="background-color:rgb(172, 255, 185);">
+  
+</body>
+</html>

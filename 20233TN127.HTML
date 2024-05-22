@@ -1,13 +1,6 @@
+
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Mi pagina </title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
 <body>
     <p>Cesar Leonardo Arizmendi Aguilar </p>
     <p>2:E</p>
@@ -15,6 +8,53 @@
     <P>20233TN127</p>
     <p>BACHILLERES</p>
     <p>JUGAR BASQUETBOL Y ESCUCHAR MUSICA</p>
-    
+    <h1>Carrucel</h1>
+    <br><br>
+    <h1>Arizmendi Aguilar Cesar Leonardo</h1>
+    <br>
+
+    <img id="imagen" class="imagen" src="./img/perro.jpeg"> 
+    <input class="imagen" type="button" value="Siguiente" onclick="avanzar()" />
+    <input class="imagen" type="button" value="volver" onclick="atrasar()" />
+
+    <script>
+        function atrasar(){
+            cesar = cesar -1;
+            if (cesar < 0){
+                cesar=5;
+            }
+            Cambiar(cesar);
+        }
+        
+        let cesar = 1; 
+
+        function avanzar() {
+            cesar = cesar + 1;
+            if (cesar > 5) {
+                cesar = 1; 
+            }
+            Cambiar(cesar);
+        }
+
+        function Cambiar(cesar) {
+            let imagen = '';
+            if (cesar == 1) {
+                imagen = './img/perro.jpeg';
+            } else if (cesar == 2) {
+                imagen = './img/rana.jpeg';
+            } else if (cesar == 3) {
+                imagen = './img/pollo.jpg';
+            } else if (cesar == 4) {
+                imagen = './img/monja.jpg';
+            } else if (cesar == 5) {
+                imagen = './img/cars.jpg';
+            }
+
+            document.getElementById('imagen').src = imagen;  
+            
+        }
+    </script>
+    <body style="background-color:rgb(172, 255, 185);">
+  
 </body>
 </html>

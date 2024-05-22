@@ -5,3 +5,17 @@
     height: auto;
     align-content: center;
 }
+.botonizq{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+    align-content: left;
+}
+.botondere{
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+    align-content: right;
+}

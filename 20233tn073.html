@@ -1,15 +1,72 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="ulf8">
-        <title>Mi primera pagina web</title>
 
-    </head>
-    <body>
-        <p>Oscar Uriel Montes Patino</p>
-        <p>DSM 2-E</p>
-        <p>20233tn073@utez.edu.mx</p>
-        <p>Tecnico en programacion</p>
-        <p>Jugar videojuegos</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="./css/oscar.css" />
+</head>
+<body>
+    <p>Oscar Uriel Montes Patino</p>
+    <p>DSM 2-E</p>
+    <p>20233tn073@utez.edu.mx</p>
+    <p>Tecnico en programacion</p>
+    <p>Jugar videojuegos</p>
+
+    <h1 id="titulo"><strong>Carrusel de Imagenes</strong></h1>
+    <h2>Montes Patiño Oscar Uriel</h2>
+    <h2>Desarrollo de Software Multiplataforma</h2>
+    <h2>3-E</h2>
+
+    <script>
+        let mn = 0; 
+        let imagen = '';  
+
+        function avanzar() {
+            mn = (mn + 1);
+            if (mn > 5) {
+            mn = 0;
+            }
+            rolar(mn);
+        }
+
+        function volver() {
+            mn = (mn - 1 ) ;
+            if(mn <0){
+                mn=5;
+            }
+            rolar(mn);
+        }
+
+        function rolar(mn) {
+            switch (mn) {
+                case 1:
+                    imagen = './img/1.jpg';
+                    break;
+                case 2:
+                    imagen = './img/2.jpg';
+                    break;
+                case 3:
+                    imagen = './img/3.jpg';
+                    break;
+                case 4:
+                    imagen = './img/4.jpg';
+                    break;
+                case 5:
+                    imagen = './img/5.jpg';
+                    break;
+                default:
+                    imagen = './img/1.jpg';
+                    break;
+            }
+            document.getElementById('imagen').src = imagen;  
+        }
+    </script>
+
+    <img id="imagen" class="imagen" src="./img/1.jpg" alt="Imagen saltarina"> 
+    <input class="botonizq" type="button" value="Siguiente" onclick="avanzar();" />
+    <input class="botondere" type="button" value="Volver" onclick="volver();" />
+</body>
 </html>

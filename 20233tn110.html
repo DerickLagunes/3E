@@ -1,16 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>20233tn110</title>
-</head>
-<body>
+    <style>
+      #carrusel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #imagen {
+        max-height: 90%;
+        max-width: 20%;
+      }
+      .botones {
+        margin: 5px;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        border-radius: 20px;
+        color: chocolate;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="carrusel">
+      <img src="img/2Jona.jpg" alt="imagen de superheroe" id="imagen" />
+      <button class="botones" id="siguiente">Siguiente</button>
+      <button class="botones" id="anterior">Anterior</button>
+    </div>
+
     <p>Barrera Calderón Jonathan Alberto</p>
     <p>3E DSM</p>
-    <P>20233TN110@UTEZ.EDU.MX</P>
+    <p>20233TN110@UTEZ.EDU.MX</p>
     <p>20233tn110</p>
     <p>Profesional Técnico Bachiller en Informática, Conalep Temixco</p>
     <p>Jugar futbol, carpinteria, aprender programación</p>
-</body>
+
+    <script>
+        //Agrego los Event Listener para ambos botones
+      document.getElementById("siguiente").addEventListener("click", avanzarImg);//Al hacer click, se ejecuta la funcion avanzarImg
+      document.getElementById("anterior").addEventListener("click", retrocederImg);//Al hacer click, se ejecuta la funcion retrocederImg
+
+      const MisUrls = [  //Mi arreglo con las url
+        "img/1Jona.jpg",
+        "img/2Jona.jpg",
+        "img/3Jona.webp",
+        "img/4Jona.jpg",
+        "img/5Jona.jpg",
+      ];
+
+      function avanzarImg() { //Para el boton siguiente
+        const posicion = MisUrls.indexOf(document.getElementById("imagen").getAttribute("src"));/*Obtengo la posicion
+        del src actual en mi arreglo*/
+
+        MisUrls.forEach((i) => {//recorro mi arreglo 
+
+          if (posicion==MisUrls.length - 1) {//Si es la posicion de la ultima imagen, pongo el src de la primera. Vuelve
+            document.getElementById("imagen").setAttribute("src",MisUrls[0]);
+          } 
+          else {//Sino, cambio al src de la siguiente imagen una en una normalmente
+            const nuevaUrl = MisUrls[posicion + 1];
+            document.getElementById("imagen").setAttribute("src", nuevaUrl); //cambio el src, le pongo la nueva URL
+          }
+        });
+      }
+
+      function retrocederImg() { //Para el boton anterior
+        const posicion = MisUrls.indexOf(document.getElementById("imagen").getAttribute("src"));
+
+        MisUrls.forEach((i) => {
+          if (posicion==0) {//Si es la posicion de la primera imagen, retrocedo a la ultima imagen
+            document.getElementById("imagen").setAttribute("src",MisUrls[MisUrls.length-1]);
+          } 
+          else {
+            const nuevaUrl = MisUrls[posicion - 1];//Sino, retrocedo normalmente
+            document.getElementById("imagen").setAttribute("src", nuevaUrl); //cambio el src, le pongo la nueva URL
+          }
+        });
+      }
+
+    </script>
+  </body>
 </html>

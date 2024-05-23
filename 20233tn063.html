@@ -1,28 +1,77 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta 'utf-8'>
-    <style>
-    h1 {color:red;}
-    p{color: white;}
-    body{
-        background-color: black;
-    }
-    .contenerdor{background-color: rgb(93, 63, 121);}
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentación de Imágenes</title>
+<link rel="stylesheet" type="text/css" href="css/styleMax.css">
+<style>
+  #image-container {
+    text-align: center;
+  }
+  h1{color: #b12c2c;}
     </style>
     </head>
-        <body>
-            <div class="contenerdor" align="center">
-                <h1> pagina web </h1>
-            </div>
-            
-            <div align="center">
-            <p>nombre: Maximiliano Roque Ocampo</p>
-            <p>carrera y grupo: Desarrollo de software multiplataformas 3E</p>
-            <p>correo: 20233tn063@utezz.edu.mx</p>
-            <p>matricula: 20233tn063</p>
-            <p>estudios: medio superior</p>
-            <p>pasatiempo: dormir</p>
-        </div>
-        </body>
+    
+    <body > <div align="center">
+      <p>nombre: Maximiliano Roque Ocampo</p>
+      <p>carrera y grupo: Desarrollo de software multiplataformas 3E</p>
+      <p>correo: 20233tn063@utezz.edu.mx</p>
+      <p>matricula: 20233tn063</p>
+      <p>estudios: medio superior</p>
+      <p>pasatiempo: dormir</p>
+  </div>
+        <br><center><h1 >animales exoticos</h1></center><br><br><br>
+        
+        <center>
+    <div id="image-container">
+      <img id="slideshow" src="" alt="Slideshow" width="600" height="500">
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <button id="antes"><img src="img/imgIzquierdaMax.png" width="40" height="40"></button>
+         <button id="despues"><img src="img/imgDerechaMax.png" width="40" height="40"></button>
+    </div>
+
+    <script>
+    // imagenes
+    const images = [
+      'img/imgMax1.JPEG',
+      'img/imgMax2.JPEG',
+      'img/imgMax3.JPEG',
+      'img/imgMax4.JPEG',
+      'img/imgMax5.JPEG'
+];
+
+// Referencia al elemento img
+const imgElement = document.getElementById('slideshow');
+
+let currentIndex = 0;
+
+// inicial
+function mostrarImagen() {
+  imgElement.src = images[currentIndex];
+}
+
+// mostrar despues
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  mostrarImagen();
+}
+
+// mostrar anterior
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  mostrarImagen();
+}
+
+// aqui se muestra la primera
+mostrarImagen();
+
+// Manejadores de eventos para los botones
+document.getElementById('antes').addEventListener('click', prevImage);
+document.getElementById('despues').addEventListener('click', nextImage);
+</script></center>
+
+</body>
 </html>

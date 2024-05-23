@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leobardo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/estilos.css'>
+    <script src='main.js'></script>
+    <style>
+        #carrusel {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        img {
+          max-height: 500px;
+          max-width: 300px;
+        }
+        button {
+          margin: 10px;
+          font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+          border-radius: 80px;
+          color: red;
+        }
+      </style>
 </head>
 <body>
     <h1><center>Nombre: Leobardo Daniel Bertadillo Villalobos</center></h1>
@@ -12,5 +32,51 @@
     <h3><center>Matricula: 20233tn098</center></h3>
     <h3><center>Estudios: Superior</center></h3>
     <h2><center>Pasatiempos: Me gusta jugar videojuegos, tambien me gusta ver series y peliculas</center></h2>
+        
+        <div id="carrusel">
+            <img id="slideshow-img" src="" alt="Slideshow Image">
+            <div>
+                <button id="botonAnt">Anterior</button>
+                <button id="botonSig">Siguiente</button>
+            </div>
+        </div>
+        
+        <script >
+        // Crear el arreglo con los URLs de las imágenes
+        const images = [
+        'img/imgLeo1.jpg',
+        'img/imgLeo2.jpg',
+        'img/imgLeo3.jpg',
+        'img/imgLeo4.jpg',
+        'img/imgLeo5.jpg'
+        ];
+        
+        // Índice actual de la imagen
+        let currentIndex = 0;
+        
+        // Obtener la etiqueta img y los botones
+        const imgElement = document.getElementById('slideshow-img');
+        const botonAnt = document.getElementById('botonAnt');
+        const botonSig = document.getElementById('botonSig');
+        
+        // Función para actualizar la imagen mostrada
+        function updateImage() {
+        imgElement.src = images[currentIndex];
+        }
+        
+        // EventListeners para los botones
+        botonAnt.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        updateImage();
+        });
+        
+        botonSig.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        updateImage();
+        });
+        
+        // Mostrar la primera imagen inicialmente
+        updateImage();
+        </script>
 </body>
 </html>

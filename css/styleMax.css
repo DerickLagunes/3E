@@ -1,0 +1,12 @@
+body{
+    background-image: url('../img/fondo1Max.jpeg');
+    height: 80%;
+    
+}
+button{
+    background-color: rgb(231, 196, 80);
+}
+h1{
+    font-size: large;
+    
+}

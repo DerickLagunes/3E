@@ -5,6 +5,21 @@
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>20233tn088</title>
+        <style>
+            button {
+                border: none;
+                color: black;
+                padding: 14px 28px;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: white;
+                border: 2px solid #007bff;
+            }
+            button:hover {
+                background: #0b7dda;
+                color: white;
+            }
+        </style>
     </head>
 
     <body>
@@ -16,6 +31,60 @@
         <p>Ir al gym</p>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBLfXj_dz9tx_v4c94uEVYY5GSnuvfLNcaHQ&usqp=CAU" alt="Img Gato">
 
+        <h1>CARRUSEL DE IMAGENES</h1>
+        <img id="imgPrincipal" src="img/img1.png" alt="Presentación de Imágenes" width="600" height="400"/>
+        <br><br>  
+        <button id="anterior">Anterior</button>
+        <button id="next">Siguiente</button>
+
+        <script>
+            //Mi arreglo con mis imagenes
+          const imgs = [
+            "img/Daniel-img1.png",
+            "img/Daniel-img2.jpg",
+            "img/Daniel-img3.jpg",
+            "img/Daniel-img4.jpg",
+            "img/Daniel-img5.jpg",
+          ];
+          
+          var contador = 0;
+    
+          var posicionImg = document.getElementById("imgPrincipal");
+          var anteriorButton = document.getElementById("anterior");
+          var nextButton = document.getElementById("next");
+    
+          // Funcion para actualizar la imagen del carrusel
+          function actualizarImg() {
+            posicionImg.src = imgs[contador];
+          }
+    
+          // Inicializar la primera imagen
+          actualizarImg();
+    
+          // Funcion para avanzar la imagen
+          function nextImg() {
+            if (contador === imgs.length - 1) {
+              contador = 0;
+            } else {
+              contador += 1;
+            }
+            actualizarImg();
+          }
+    
+          // Funcion para retroceder la imagen
+          function anteriorImg() {
+            if (contador === 0) {
+              contador = imgs.length - 1;
+            } else {
+              contador -= 1;
+            }
+            actualizarImg();
+          }
+    
+          // Event listeners para los botones
+          anteriorButton.addEventListener("click", anteriorImg);
+          nextButton.addEventListener("click", nextImg);
+        </script>
     </body>
 
 </html>

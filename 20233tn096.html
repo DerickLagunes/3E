@@ -3,14 +3,69 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>20233TN096</title>
+	<link rel="stylesheet" href="css/EstilosSalem.css">
 <head>
 <body>
-	<p>Nombre: SALEM ROMÁN JIMÉNEZ </p>
-	<p>Carrera: DSM </p>
-	<p>Grupo: E </p>
-	<p>Matricula: 20233TN096 </p>
-	<p>Correo: 20233tn096@utez.edu.mx </p>
-	<p>Estudios: Medio Superior </p>
-	<p><strong>Mis pasatiempos: Música, basquetbol</strong></p>
+
+	<center>
+		<div>
+			<p>Nombre: SALEM ROMÁN JIMÉNEZ </p>
+			<p>Carrera: DSM </p>
+			<p>Grupo: E </p>
+			<p>Matricula: 20233TN096 </p>
+			<p>Correo: 20233tn096@utez.edu.mx </p>
+			<p>Estudios: Medio Superior </p>
+			<p><strong>Mis pasatiempos: Música, basquetbol</strong></p>
+			<h1> Actualizado con Carrusel de imágenes</h1>
+		</div>
+	   </center>
+		
+	
+		<div id="carrusel">
+			<img id="slideshow-img" src="" alt="Slideshow Image">
+			<div>
+				<button id="prev-button">Atras</button>
+				<button id="next-button">Adelante</button>
+			</div>
+		</div>
+		
+		<script >
+
+		const images = [
+		'img/Salem1.jpg',
+		'img/Salem2.jpg',
+		'img/Salem3.jpg',
+		'img/Salem4.jpg',
+		'img/Salem5.jpg'
+		];
+		
+
+		let currentIndex = 0;
+		
+
+		const imgElement = document.getElementById('slideshow-img');
+		const prevBtn = document.getElementById('prev-button');
+		const nextBtn = document.getElementById('next-button');
+		
+	
+		function updateImage() {
+		imgElement.src = images[currentIndex];
+		}
+		
+		// EventListeners para los botones
+		prevBtn.addEventListener('click', () => {
+		currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+		updateImage();
+		});
+		
+		nextBtn.addEventListener('click', () => {
+		currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+		updateImage();
+		});
+		
+		// Mostrar la primera imagen inicialmente
+		updateImage();
+		
+		</script>
 	</body>
 	</html>

@@ -8,7 +8,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href=>
     <script src='main.js'></script>
     <style>
-        #carr {
+        #carrucel {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -58,7 +58,7 @@
 </table>
 </center>
 </div>
-<div id="carr">
+<div id="carrucel">
     <img id="slideshow-img" src="" alt="Slideshow Image">
     <div>
         <button id="prev-btn">Anterior</button>
@@ -75,7 +75,8 @@ const images = [
 'img/Francisco-5.jpg'
 ];
 
-// Índice actual de la imagen
+//El codigo fue realizado con la explicacion de alan xd.
+// Índice actual de la imagen aydado por alan
 let currentIndex = 0;
 
 // Obtener la etiqueta img y los botones
@@ -83,12 +84,12 @@ const imgElement = document.getElementById('slideshow-img');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 
-// Función para actualizar la imagen mostrada
+// Función para actualizar la imagen mostrada ayudado por alan
 function updateImage() {
 imgElement.src = images[currentIndex];
 }
 
-// EventListeners para los botones
+// EventListeners para los botones ayudado por alan
 prevBtn.addEventListener('click', () => {
 currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
 updateImage();
@@ -97,9 +98,9 @@ updateImage();
 nextBtn.addEventListener('click', () => {
 currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
 updateImage();
-});
+}); 
 
-// Mostrar la primera imagen inicialmente
+// Mostrar la primera imagen ayudado por alan
 updateImage();
 
 </script>

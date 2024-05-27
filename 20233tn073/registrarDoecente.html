@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <form action="verExamen.html" method="get">
+      <label>Materia: 
+        <input type="text" name="materia" required placeholder="Ingrese una meteria" maxlength="20" />
+      </label>
+      <br>
+      <label>Grupo: 
+        <select>
+            <option value="3E">3-E</option>
+            <option value="3B">3-B</option>
+            <option value="3C">3-C</option>
+        </select>
+      </label>
+      <br>
+      <label>Fecha de aplicación: 
+           <input type="date" name="fechaAplicacion"/>
+      </label>
+      <br>
+      <label>Nombre de maestro: 
+        <input type="text" name="nombreMaestro" placeholder="Ingrese el nombre del Maestro"/>
+   </label>
+   <br>
+   <label>Numero de preguntas: 
+    <input type="number" name="numeroPreguntas" placeholder="Ingrese el numero de preguntas"/>
+</label>
+<br>
+<input type="submit" value="Registrar examen"/>
+    </form>
+    <script>
+          getParameter = (key) => {
+
+
+ 
+
+
+address = window.location.search; // url de la ventana actual 
+//Objeto de tipo URLSearchParams
+parameterList = new URLSearchParams(address); 
+//Regresa el valor del parámetro “key”
+return parameterList.get(key);
+}
+console.log(getParameter("materia"));
+    </script>
+</body>
+</html>

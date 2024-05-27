@@ -34,14 +34,16 @@
         let Eapellidos=document.getElementById("Eapellidos");//obtengo la etiqueta 
         Eapellidos.innerText=getParameter("apellidos");//pongo como texto el apellido recibido del form
         //CORREO
-        let Ecorreo=document.getElementById("Ecorreo");//obtengo la etiqueta 
-        Ecorreo.innerText=getParameter("correo");//pongo el correo recibido del form
+        const correo = getParameter("correo");
+        document.getElementById("Ecorreo").href = `mailto:${correo}`;
+        document.getElementById("Ecorreo").innerText = correo;
         //FECHA NACIMIENTO
         let Enac=document.getElementById("fNac");//obtengo la etiqueta 
         Enac.innerText=getParameter("fechaNa");//pongo la fecha de nacimiento recibido del form
         //TELEFONO
-        let Etel=document.getElementById("Etel");//obtengo la etiqueta 
-        Etel.innerText=getParameter("telefono");//pongo el correo recibido del form
+        const tele = getParameter("telefono");
+        document.getElementById("Etel").href = `tel:${tele}`;
+        document.getElementById("Etel").innerText = tele;
         //EDAD
         let Eedad=document.getElementById("Eedad");//obtengo la etiqueta 
         let edad=(new Date().getFullYear())-(new Date(getParameter("fechaNa")).getFullYear());//año actual menos año del parametro

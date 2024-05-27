@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <form action="verPersona.html" method="get">
+        <label>Nombre:
+            <input type="text" name="nombre" required placeholder="Ingrese su nombre" maxlength="20" />
+        </label>
+        <br>
+        <label>Apellidos:
+            <input type="text" name="apellidos" required placeholder="Ingrese sus apellidos" />
+        </label>
+        <br>
+        <label>Correo:
+            <input type="text" name="correo" required placeholder="Ingrese su Correo" />
+        </label>
+        <br>
+        <label>Fecha de nacimiento:
+            <input type="date" name="fecha" placeholder="Ingrese su fecha de nacimiento" required />
+        </label>
+        <br>
+        <label>Telefono:
+            <input type="number" name="telefono" placeholder="Ingrese su numero de telefono" required maxlength="30" />
+        </label>
+        <br>
+        <label>Usuario:
+            <input type="text" name="usuario" placeholder="Ingrese su Usuario" required />
+        </label>
+        <br>
+        <label>Contraseña:
+            <input type="text" name="contra" placeholder="Ingrese su Contraseña" required />
+        </label>
+        <br>
+        <label>Contraseña:
+            <input type="text" name="contra2" placeholder="Repita su contraseña" required />
+        </label>
+        <input type="submit" value="Registrar persona" />
+    </form>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search; // url de la ventana actual 
+            //Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            //Regresa el valor del parámetro “key”
+            return parameterList.get(key);
+        }
+        console.log(getParameter("nombre"));
+        console.log(getParameter("apellidos"));
+        console.log(getParameter("correo"));
+        console.log(getParameter("fecha"));
+        console.log(getParameter("telefono"));
+        console.log(getParameter("usuario"));
+        console.log(getParameter("contra"));
+        console.log(getParameter("contra2"));
+
+
+    </script>
+
+</body>
+
+</html>

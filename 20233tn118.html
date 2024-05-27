@@ -1,15 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi primera página web </title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #imgcarrusel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            max-width: 100%;
+            max-height: 400px;
+        }
+        button {
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Otmar Hernandez Trujillo</h1>
     <p>Desarrollo de Software Multiplataforma 3E</p>
     <p><b>20233TN118</b></p>
-    <p>Estudios: Bachillerato (Carrera técnica de progamación)</p>
-    <p>Me gusta ir al gym y darle duro al press inclinado en pecho y escuchar música</p>
+    <p>Estudios: CBTIS 166 "PABLO TORRES BURGOS" (Carrera técnica de progamación)</p>
+    <p>Me gusta darle duro al press inclinado en pecho y escuchar música menos a Humbe, me dan sueño sus rolas.</p>
+    <div id="imgcarrusel">
+        <img id="carrusel-img" src="" alt="Carrusel de imágenes">
+        <div>
+            <button id="atras-btn">Atrás</button>
+            <button id="sig-btn">Siguiente</button>
+        </div>
+    </div>
+    
+    <script >
+        // Definir URLs de las imágenes
+    const images = [
+    'img/otmar1.jpg',
+    'img/otmar2.jpg',
+    'img/otmar3.jpg',
+    'img/otmar4.jpg',
+    'img/otmar5.jpg'
+    ];
+    
+    // Índice actual de la imagen
+    let indiceActual = 0;
+    
+    // Obtener la etiqueta img y los botones
+    const imgElement = document.getElementById('carrusel-img');
+    const prevBtn = document.getElementById('atras-btn');
+    const nextBtn = document.getElementById('sig-btn');
+    
+    // Función para actualizar la imagen mostrada
+    function updateImage() {
+    imgElement.src = images[indiceActual];
+    }
+    
+    // EventListeners para los botones
+    prevBtn.addEventListener('click', () => {
+    indiceActual = (indiceActual > 0) ? indiceActual - 1 : images.length - 1;
+    updateImage();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+    indiceActual = (indiceActual < images.length - 1) ? indiceActual + 1 : 0;
+    updateImage();
+    });
+    
+    // Mostrar la primera imagen inicialmente
+    updateImage();
+    
+    </script>
 </body>
 </html>

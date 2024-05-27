@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20233tn084</title>
+    <style>
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin: 5px;
+            border: #000000;
+            border-radius: 90%;
+            background-color: #6f6d6d;
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:hover {
+            background: #0b7dda;
+            color: white;
+        }
+
+        h1 {
+            color: #1c1515;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <p>
+        <div>
+            <br><strong>Nombre:</strong> Janetthe Millán Millán.
+            <br><strong>Carrera:</strong> Desarrollo de Software Multiplataforma.
+            <br><strong>Grado y Grupo:</strong> 3-E.
+            <br><strong>Correo:</strong> 20233tn084@utez.edu.mx.
+            <br><strong>Matrícula:</strong> 20233tn084.
+            <br>Nivel medio superior
+            <br><strong>Pasatiempos::</strong> Escuchar música, ver series y jugar con mis amigos.
+        </div>
+        </p>
+
+        <br>
+        <h1>BANDAS CHIDAS</h1>
+        <img id="imgkul" src="img/jan1.png" alt="imgkul" width="700" height="550" />
+        <br><br>
+        <button id="regresar"><-</button>
+        <button id="verSiguiente">-></button>
+
+                <script>
+                    //IMAGENES
+                    const img = [
+                        "img/jan2.jpg",
+                        "img/jan3.jpg",
+                        "img/jan4.webp",
+                        "img/jan5.jpg",
+                        "img/jan6.jpg",
+                    ];
+
+                    var contador = 0;
+                    var posicionImg = document.getElementById("imgkul");
+                    var regresarButton = document.getElementById("regresar");
+                    var verSiguienteButton = document.getElementById("verSiguiente");
+
+                    //Actualizar la imagen del carrusel
+                    function actualizarImg() {
+                        posicionImg.src = img[contador];
+                    }
+
+                    //Siguiente imagen
+                    function verSiguienteImg() {
+                        if (contador === img.length - 1) {
+                            contador = 0;
+                        } else {
+                            contador += 1;
+                        }
+                        actualizarImg();
+                    }
+
+                    // Funcion para retroceder la imagen
+                    function regresarImg() {
+                        if (contador === 0) {
+                            contador = img.length - 1;
+                        } else {
+                            contador -= 1;
+                        }
+                        actualizarImg();
+                    }
+
+                    // Event listeners para los botones
+                    regresarButton.addEventListener("click", regresarImg);
+                    verSiguienteButton.addEventListener("click", verSiguienteImg);
+                </script>
+    </center>
+</body>
+
+</html>

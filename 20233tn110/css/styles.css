@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Color de fondo chido */
+    text-align: center;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #555; /* Color de encabezado */
+}
+
+p {
+    font-size: 16px;
+}
+
+img {
+    max-width: 300px; /* Establece el ancho máximo de la imagen */
+    height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
+}
+
+.botones {
+    background-color:#f0f0f0;
+    margin: 5px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    border-radius: 20px;
+    color: chocolate;
+  }
+
+form input{
+    margin-bottom: 20px;
+}
+
+
+/* Estilos para el enlace */
+a {
+    color: #007bff; /* Color del enlace */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

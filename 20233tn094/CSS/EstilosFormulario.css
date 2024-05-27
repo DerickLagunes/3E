@@ -1,0 +1,75 @@
+body{
+    text-align: center;
+    background-image: linear-gradient(to right top, #ffff00, #ffcc00, #ff9900, #ff6600, #ff3300, #ff0000);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1{
+    font-family: 'Blockletter';
+    font-size:45px;
+    color: #00bf72;
+    -webkit-text-stroke: 1px #004d7a;
+}
+@font-face {
+    font-family: 'Blockletter';
+    src: url('Blockletter.otf') 
+}
+table{
+    margin: auto;
+    border-style:dashed;
+    border-collapse:separate;
+    border-color:#a8eb12;
+    background-color:darkseagreen;
+    font-size: large;
+}
+/* Botón estilo */
+.guardar {
+  background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  box-shadow: rgba(255,255,255,.6) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  font-size: 14px;
+  height: 29px;
+  font-size: 13px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 11px;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+.guardar:active {
+  border-bottom-color: #a2a6ac;
+}
+.guardar:active:hover {
+  border-bottom-color: #a2a6ac;
+}
+.guardar:hover {
+  border-color: #a2a6ac #979aa1 #82858a;
+}
+.guardar:focus {
+  border-color: #e77600;
+  box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;
+  outline: 0;
+}
+input{
+    font-family: consolas;
+    background-color: #BDB76F;
+}
+input::placeholder {
+    font-size: 12.5px;
+}

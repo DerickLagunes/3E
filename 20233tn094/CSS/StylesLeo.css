@@ -1,0 +1,40 @@
+body {
+    text-align: center;
+    background-image: url("../Img/Space.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+h1{
+    color:wheat;
+}
+h2{
+    color:#F7FF00;
+}
+.carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+.lado{
+    padding: 0 16px;
+    border-radius: 2px;
+    background-color: #087022;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+                0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+#imagen {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+}
+.indicacion{
+    font-family: 'AngryBirds';
+    color:white;
+}
+@font-face {
+    font-family: 'AngryBirds';
+    src: url('angrybirds-regular.ttf') 
+}

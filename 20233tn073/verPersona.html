@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Datos de la Persona</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <h1>Nombre: <strong id="nombre"></strong></h1>
+    <h2>Apellidos: <strong id="apellidos"></strong></h2>
+    <h2>Edad: <strong id="edad"></strong></h2>
+    <a id="correo" href="">Correo</a>
+    <br>
+    <a id="telefono" href="">Teléfono</a>
+    <h1>Contra: <strong id="cont"></strong></h1>
+    <h1>Confirmar Contra: <strong id="contra2"></strong></h1>
+    <p>Mensaje: <strong id="mensaje"></strong></p>
+
+    <script>
+        function getParameter(key) {
+            const address = window.location.search; // URL de la ventana actual
+            const parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        const nombre = document.getElementById("nombre");
+        nombre.innerText = getParameter("nombre");
+
+        const apellidos = document.getElementById("apellidos");
+        apellidos.innerText = getParameter("apellidos");
+
+        const correo = document.getElementById("correo");
+        correo.innerText = getParameter("correo");
+        correo.href = `mailto:${getParameter("correo")}`;
+
+        const telefono = document.getElementById("telefono");
+        telefono.innerText = getParameter("telefono");
+        telefono.href = `tel:${getParameter("telefono")}`;
+
+        const contra = document.getElementById("cont");
+        contra.innerText = getParameter("contra");
+
+        const contra2 = document.getElementById("contra2");
+        contra2.innerText = getParameter("contra2");
+
+        function calcularEdad(fechaNacimiento) {
+            const fechaNac = new Date(fechaNacimiento);
+            const hoy = new Date();
+            const diferenciaAnios = hoy.getFullYear() - fechaNac.getFullYear();
+            return diferenciaAnios;
+        }
+        
+        const fechaNacimiento = getParameter("fecha");
+        if (fechaNacimiento) {
+            const edad = calcularEdad(fechaNacimiento);
+            document.getElementById("edad").innerText = edad;
+        }
+
+        function validar() {
+            const contra = document.getElementById("cont").innerText;
+            const contra2 = document.getElementById("contra2").innerText;
+
+            if(contra.length<=4) {
+                return "Su contraseña es insegura, menos de 5 caracteres";
+            }
+            if (contra !== contra2 ) {
+                return "Las contraseñas no coinciden";
+            }else {
+                return "Todo bien :)"
+            } 
+
+            
+        }
+
+        const mensaje = validar();
+        const mensajeElemento = document.getElementById("mensaje");
+        mensajeElemento.innerText = mensaje;
+    </script>
+</body>
+
+</html>
+

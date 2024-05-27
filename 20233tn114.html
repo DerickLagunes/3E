@@ -1,16 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <title>Primer Trabajo</title>
+<meta charset='utf-8'>
+<title>Primer Trabajo</title>
 </head>
 <body>
     
 <center><p>Catarino Merino Fredy Julian</p></center>
+<CENter>
 <p>Carrera: <strong>DSM</strong> Grupo: <strong>3E</strong></p>
 <P>Matriucla <strong>20233TN114</strong></P>
 <p>Estudios: Bachilleres no.1</p>
 <p><strong>Mis pasatiempos:</strong></p>
 <p>Me gusta escuchar musica,jugar futbol y ir al gimnasio</p>
+</CENter>
+</center>
+    
+
+<div id="carr">
+    <img id="slideshow-img" src="" alt="Slideshow Image">
+    <div>
+        <button id="prev-btn">Anterior</button>
+        <button id="next-btn">Siguiente</button>
+    </div>
+</div>
+
+<script >
+    // Definir URLs de las imágenes
+const images = [
+    
+'img/img1 Fredy.jpg',
+'img/img2 Fredy.jpg',
+'img/img3 Fredy.jpg',
+'img/img4 Fredy.jpg',
+'img/img5 Fredy.jpg',
+];
+
+// Índice actual de la imagen
+let currentIndex = 0;
+
+// Obtener la etiqueta img y los botones
+const imgElement = document.getElementById('slideshow-img');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+// Función para actualizar la imagen mostrada
+function updateImage() {
+imgElement.src = images[currentIndex];
+}
+
+// EventListeners para los botones
+prevBtn.addEventListener('click', () => {
+currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+updateImage();
+});
+
+nextBtn.addEventListener('click', () => {
+currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+updateImage();
+});
+
+// Mostrar la primera imagen inicialmente
+updateImage();
+
+</script>
+</body>
+</html>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Formulario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS/EstilosFormulario.css'>
+    <script src='JS/ScriptFormulario.js'></script>
+</head>
+<body>
+    <h1>Bienvenido al formulario</h1>
+    <br>
+    <form action="verPersona.html">
+        <table border="2">
+            <tr>
+            <td><label>Nombres: </label></td>
+            <td><input type="text" name="nombre" required placeholder="Ingresa tu nombre" maxlength="20"/></td>
+            </tr>
+            <tr>
+            <td><label>Apellidos: </label></td>
+            <td><input type="text" name="apellidos" required placeholder="Ingresa tus apellidos" maxlength="20"/></td>
+            </tr>
+            <tr>
+            <td><label>Correo: </label></td>
+            <td><input type="email" name="correoE" placeholder="Ingresa tu correo" maxlength="30" /></td>
+            </tr>
+            <tr>
+            <td><label>Fecha de nacimiento: </label></td>
+            <td><input type="date" name="fechaNacimiento"/></td>
+            </tr>
+            <tr>
+            <td><label>Teléfono: </label></td>
+            <td><input type="tel" name="telefono" placeholder="Ingresa tu número"/></td>
+            </tr>
+            <tr>
+            <td><label>Nombre de usuario: </label></td>
+            <td><input type="text" name="username" placeholder="Crea un username"/></td>
+            </tr>
+            <tr>
+            <td><label>Contraseña: </label></td>
+            <td><input type="password" name="Contraseña" placeholder="Ingresa una contraseña"/></td>
+            </tr>
+            <tr>
+            <td><label>Confirmar contraseña: </label></td>
+            <td><input type="password" name="confirContra" placeholder="Confirma tu contraseña" /></td>
+            </tr>
+        </table>
+        <br>
+        <button class="guardar" type="submit" role="button">Guardar</button>
+    </form>
+</body>
+</html>

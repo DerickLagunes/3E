@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Resultados</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS/EstilosPersonas.css'>
+    <link rel="Icono" href="Img/FotoIcon.png">
+    <script src='JS/scriptPersona.js'></script>
+</head>
+<body>
+    <p><h1 class="Titulo">TUS RESULTADOS</h1></p>
+    <table class="acomodo">
+    <tr>
+    <td><img src="Img/Icono.png"></td>
+    <td><table class="datos">
+        <tr>
+        <td class="tipo"><h1>Nombres: </h1></td>
+        <td><h1><strong id="name"></strong></h1></td>
+        </tr>
+        <tr>
+        <td class="tipo"><h1>Apellidos: </h1></td>
+        <td><h2><strong id="lastname"></strong></h2></td>
+        </tr>
+        <tr>
+        <td class="tipo"><h1>Correo: </h1></td>
+        <td><a href = "mailto: email"><h2><strong id="email"></strong></h2></a></td>
+        </tr>
+        <td class="tipo"><h1>Telefono: </h1></td>
+        <td><a href= "tel:telephone"><h2><strong id="telephone"></strong></h2></a></td>
+        </tr>
+        <tr>
+        <td class="tipo"><h1>Fecha de nacimiento: </h1></td>
+        <td><h2><strong id="birthAge"></strong></h2></td>
+        </tr>
+        <tr>
+        <td class="tipo"><h1>Edad actual: </h1></td>
+        <td><h2><strong id="currentAge"></strong></h2></td>
+        </tr>
+        <tr>
+        <td class="tipo"><h1>Nombre de usuario: </h1></td>
+        <td><h2><strong id="username"></strong></h2></td>
+        </tr>
+    </table>
+    <h1><p class="laContra" id="password"></p></h1>
+    <script>
+        getParameter = (key) => {
+          address = window.location.search; //url de la ventana actual 
+          //Objeto de tipo URLSearchParams
+          parameterList = new URLSearchParams(address); 
+          //Regresa el valor del parámetro “key”
+          return parameterList.get(key);
+        }
+        //nombre
+        let name = document.getElementById("name");
+        name.innerText = getParameter("nombre");
+        //apellidos
+        let lastname = document.getElementById("lastname");
+        lastname.innerText = getParameter("apellidos");
+        //correo
+        let mail = document.getElementById("email");
+        mail.innerText = getParameter("correoE");
+        //teléfono
+        let telephone = document.getElementById("telephone");
+        telephone.innerText = getParameter("telefono");
+        //fecha
+        let birthAge = document.getElementById("birthAge");
+        birthAge.innerText = getParameter("fechaNacimiento");
+        //edad calculada
+        let bDate = new Date(getParameter("fechaNacimiento"));
+        let theDate = bDate.getFullYear();
+        let currentAge = document.getElementById("currentAge");
+        currentAge.innerText = 2024 - theDate;
+        //usuario
+        let username = document.getElementById("username");
+        username.innerText = getParameter("username");
+        //contraseña
+        const contra1 = getParameter("Contraseña");
+        const contra2 = getParameter("confirContra");
+        let password = document.getElementById("password");
+        let password2 = document.getElementById("password2");
+        //Validar contraseña
+        if (contra1 !== contra2) {
+        password.innerText = "Las contraseñas no coinciden";
+        } else {
+        if (contra1.length < 5) {
+        password.innerText = "Las contraseñas coinciden. Pero tu contraseña es débil";
+        } else {
+        password.innerText = "Las contraseñas coinciden. Y tu contraseña es segura";
+        }
+        }
+    </script>
+    </td>
+    </tr>
+    </table>
+</body>
+</html>

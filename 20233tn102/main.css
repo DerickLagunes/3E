@@ -1,0 +1,34 @@
+body {
+  font-family: Helvetica;
+}
+label {
+  color: black;
+}
+input {
+  color: black;
+  padding: 5px 5px 5px 5px;
+}
+.btn {
+  width: auto;
+  height: auto;
+  padding: 10px 10px 10px 10px;
+  background-color: rgb(241, 187, 255);
+  border-radius: 15px;
+  border-color: transparent;
+}
+::placeholder {
+  color: black;
+}
+.si {
+  background-color: rgb(181, 215, 255);
+  border-radius: 15px;
+  width: 350px;
+  height: auto;
+  padding: 10px 10px 10px 10px;
+}
+h1 {
+  color: rgb(36, 36, 88);
+}
+h2 {
+  color: rgb(36, 36, 88);
+}

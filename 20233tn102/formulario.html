@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Formulario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <form action="verFormulario.html" method="GET" class="si">
+        <label for="nombre">Nombre
+            <input type="text" id="nombre" name="nombre" required placeholder="Ingrese nombre" maxlength="50" />
+        </label><br>
+        <br>
+        <label for="apellido">Apellido
+            <input type="text" id="apellido" name="Apellido" required placeholder="Ingrese apellido" maxlength="50" />
+        </label><br>
+        <br>
+        <label for="correo">Correo
+            <input type="email" id="correo" name="correo" required placeholder="nombre@forexample.com" maxlength="70" />
+        </label><br>
+        <br>
+        <label for="fecha">Fecha de nacimiento
+            <input type="date" id="fecha" name="fecha" required />
+        </label><br>
+        <br>
+        <label for="telefono">Teléfono
+            <input type="tel" id="telefono" name="telefono" required placeholder="Teléfono" maxlength="12"/>
+        </label><br>
+        <br>
+        <label for="user">Usuario
+            <input type="text" id="user" name="user" required placeholder="Ingrese usuario" maxlength="50" />
+        </label><br>
+        <br>
+        <label for="contra">Contraseña
+            <input type="password" id="contra" name="contra" required placeholder="Contraseña" maxlength="50" />
+        </label><br>
+        <br>
+        <label for="confirmacontra">Repite la Contraseña
+            <input type="password" id="confirmacontra" name="confirmacontra" required placeholder="Contraseña" maxlength="50" />
+        </label><br>
+        <br>
+        <input type="submit" value="Enviar" class="btn" />
+    </form>
+</body>
+</html>

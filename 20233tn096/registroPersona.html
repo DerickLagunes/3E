@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registro de Persona</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="EstiloSalem.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Registro de Persona</h1>
+    <form id="registroForm">
+        <label>
+            Nombres:
+            <input type="text" name="Nombre" required placeholder="Ingresa tu nombre" maxlength="20">
+        </label>
+        <label>
+            Apellidos:
+            <input type="text" name="ApellidoPaterno" required placeholder="Apellido Paterno" maxlength="20">
+            <input type="text" name="ApellidoMaterno" required placeholder="Apellido Materno" maxlength="20">
+        </label>
+        <label>
+            Correo:
+            <input type="email" name="Correo" required placeholder="Ingresa tu Correo" maxlength="100">
+        </label>
+        <label>
+            Fecha de nacimiento:
+            <input type="date" name="fechaNacimiento" required>
+        </label>
+        <label>
+            Teléfono:
+            <input type="tel" name="Teléfono" required placeholder="Ingresa tu Número de teléfono" maxlength="10">
+        </label>
+        <label>
+            Usuario:
+            <input type="text" name="Usuario" required placeholder="Ingresa tu usuario" maxlength="20">
+        </label>
+        <label>
+            Contraseña:
+            <input type="password" id="Contrasena" name="Contraseña" required placeholder="Ingresa tu contraseña" maxlength="15">
+        </label>
+        <label>
+            Confirmar Contraseña:
+            <input type="password" id="ConfirmarContrasena" name="ConfirmarContraseña" required placeholder="Confirma tu contraseña" maxlength="15">
+        </label>
+        <button type="button" onclick="validarFormulario()">Guardar</button>
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script>
+        function validarFormulario() {
+            const contrasena = document.getElementById('Contrasena').value;
+            const confirmarContrasena = document.getElementById('ConfirmarContrasena').value;
+            const mensaje = document.getElementById('mensaje');
+
+            if (contrasena !== confirmarContrasena) {
+                mensaje.textContent = 'Las contraseñas no coinciden';
+                return;
+            }
+
+            if (contrasena.length < 5) {
+                mensaje.textContent = 'La contraseña es insegura';
+                return;
+            }
+
+            // Si las contraseñas coinciden y son seguras, redirigir a verPersona.html
+            const form = document.getElementById('registroForm');
+            const formData = new URLSearchParams(new FormData(form)).toString();
+            window.location.href = `verPersona.html?${formData}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Respuesta del Formulario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1 id="nombre"></h1>
+    <h2 id="apellidos"></h2>
+    <p id="correo"></p>
+    <p id="telefono"></p>
+    <p id="edad"></p>
+    <p id="mensaje"></p>
+
+    <script>
+        function getParameter(key) {
+            const address = window.location.search;
+            const parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        let nombre = getParameter("nombre");
+        let apellidos = getParameter("apellidos");
+        let correo = getParameter("correo");
+        let telefono = getParameter("telefono");
+        let fechaNacimiento = new Date(getParameter("fechaNacimiento"));
+
+        document.getElementById("nombre").innerText = `Nombre: ${nombre}`;
+        document.getElementById("apellidos").innerText = `Apellidos: ${apellidos}`;
+
+        document.getElementById("correo").innerHTML = `Correo: <a href="mailto:${correo}">${correo}</a>`;
+
+        document.getElementById("telefono").innerHTML = `Telefono: <a href="tel:${telefono}">${telefono}</a>`;
+
+        let actual = new Date();
+        const edad = actual.getFullYear() - fechaNacimiento.getFullYear();
+        document.getElementById("edad").innerText = `Edad: ${edad} años`;
+
+        let contraseña = getParameter("contraseña");
+        let repetirContraseña = getParameter("RepetirContraseña");
+        let mensaje = document.getElementById("mensaje");
+
+        if (contraseña !== repetirContraseña) {
+            mensaje.innerText = "Las contraseñas no coinciden";
+        } else if (contraseña.length < 5) {
+            mensaje.innerText = "Tu contraseña no es segura (solo tiene 5 caracteres)";
+        }
+    </script>
+</body>
+</html>

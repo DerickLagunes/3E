@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Persona</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Nombre: <strong id="nombre"></strong></h1>
+    <br>
+    <h1>Apellidos: <strong id="apellidos"></strong></h1>
+    <br>
+    Correo: <a href="mailto:" id="correo"></a>
+    <br>
+    Teléfono: <a href="" id="telefono"></a>
+    <p id="edad">Edad</p>
+    <p id="mesage" ></p>
+
+    <script>
+        const getParameter = (key) => {
+            const address = window.location.search;
+            const parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        const calcularEdad = (fechaNacimiento) => {
+            const fechaNac = new Date(fechaNacimiento);
+            const hoy = new Date();
+            let edad = hoy.getFullYear() - fechaNac.getFullYear();
+            const mes = hoy.getMonth() - fechaNac.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+                edad--;
+            }
+            return edad;
+        }
+
+        //Llaman las cosas del registroPersona.html
+        const nombre = getParameter("nombre");
+        const apellido = getParameter("apellidos");
+        const correo = getParameter("correo");
+        const nacimiento = getParameter("fechaNacimiento");
+        const tel = getParameter("telefono");
+        const password1 = getParameter("contrasena");
+        const password2 = getParameter("repetirContrasena");
+
+        const edad = calcularEdad(nacimiento);
+        document.getElementById("edad").innerText = 'Edad: ' + edad + ' años';
+
+        //Validar contras
+        const passwordMessage = document.getElementById('mesage');
+        if (password1 !== password2) {
+            passwordMessage.textContent = 'No coinciden';
+        } else if (password1.length < 5) {
+            passwordMessage.textContent = 'Su contraseña es insegura';
+        } else {
+            passwordMessage.textContent = 'Contraseñas valida.';
+        }
+
+        //Sirve para actualizar el html
+        document.getElementById("nombre").innerText = nombre;
+        document.getElementById("apellidos").innerText = apellido;
+        document.getElementById("correo").href = 'mailto:${correo}';
+        document.getElementById("correo").innerText = correo;
+        document.getElementById("telefono").href = ' tel:${tel}';
+        document.getElementById("telefono").innerText = tel;
+    </script>
+</body>
+</html>

@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="details-container">
-        <center>
+        <center> 
         <h1>DATOS RECIBIDOS:</h1>
         <h1>Nombres: <strong id="names"></strong></h1>
         <h2>Apellidos: <strong id="lastnames"></strong></h2>
@@ -40,16 +40,18 @@
         lastnames.innerText = getParameter("apellidos");
 
         //Correo
-        let email = document.getElementById("email");
-        email.innerText = getParameter("correo");
+        const correo = getParameter("correo");
+        document.getElementById("email").href = `mailto:${correo}`;
+        document.getElementById("email").innerText = correo;
 
         //Fecha de nacimiento
         let birthAge = document.getElementById("birthAge"); 
         birthAge.innerText = getParameter("fechaNacimiento");
 
         //Teléfono
-        let telephone = document.getElementById("telephone");
-        telephone.innerText = getParameter("telefono");
+        const telefo = getParameter("telefono");
+        document.getElementById("telephone").href = `tel:${telefo}`;
+        document.getElementById("telephone").innerText = telefo;
 
         //Edad
         let age = document.getElementById("age");

@@ -1,0 +1,43 @@
+        <!DOCTYPE html>
+        <head>
+            <title>formulario</title>
+            <script src="script.js"></script>
+        </head>
+        <body>
+            <p>formulario</p>
+            <form  id="miFormulario">
+                <label for="nombres">Nombres:</label>
+                <input type="text" id="nombres" name="nombres" required><br><br>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required><br><br>
+
+                <label for="correo">Correo:</label>
+                <a href = "mailto: correo"></a>
+                <input type="email" id="correo" name="correo" required><br><br>
+
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required><br><br>
+
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required><br><br>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required><br><br>
+
+                <label for="repetir_contrasena">Repetir contraseña:</label>
+                <input type="password" id="repetir_contrasena" name="repetir_contrasena" required><br><br>
+
+                <label id="mensaje"></label>
+
+                <button type="submit">Haz clic aquí</button>
+            </form>
+            <div id="resultado">
+                <h1 id="resNombre"></h1>
+                <h2 id="resApellido"></h2><br><br>
+            </div>
+        </body>
+        </html>

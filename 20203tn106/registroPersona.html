@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+     <h1>FORMULARIO</h1>
+    <form action="verPersona.html" method="get">
+        <label>Nombre:
+            <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
+        </label>
+        <br>
+        <label>Apellidos:
+            <input type="text" name="apellidos" placeholder="Ingresa tu apellido" required>
+        </label>
+        <br>
+        <label>Correo:
+            <input type="email" name="correo" placeholder="Ingresa tu correo" required>
+        </label>
+        <br>
+        <label>Fecha de nacimiento:
+            <input type="date" name="fechaNa" placeholder="Ingresa tu fecha de nacimiento" required>
+        </label>
+        <br>
+        <label>Teléfono:
+            <input type="tel" name="telefono" placeholder="Ingresa tu telefono" required>
+        </label>
+        <br>
+        <label>Usuario:
+            <input type="text" name="usuario" placeholder="Ingresa tu usuario" required>
+        </label>
+        <br>
+        <label>Contraseña:
+            <input type="password" name="contrasena1" placeholder="Ingresa tu contraseña" required>
+        </label>
+        <br>
+        <label>Confirmar contraseña:
+            <input type="password" name="contrasena2" placeholder="Confirma tu contraseña" required>
+        </label>
+        <br>
+        <input class="botones" type="submit" value="Registrate">
+    </form>
+    <script>
+        getParameter = (key) => {
+          address = window.location.search; // url de la ventana actual
+          //Objeto de tipo URLSearchParams
+          parameterList = new URLSearchParams(address);
+          //    Regresa el valor del parámetro “key”
+          return parameterList.get(key);
+      }
+      console.log(getParameter("nombre"));
+    </script>
+</body>
+</html>

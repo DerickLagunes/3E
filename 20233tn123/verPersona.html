@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <h1>Nombres: <strong id="Nombre"> </strong></h1>
+    <h2>Apellido: <strong id="Apellido"></strong></h2>
+    Correo : <a id="Correo" href="mailto: Correo"></a>
+    <br />
+    Telefono <a id="telefono" href="tel:telefono"></a>
+    <h2>Edad: <strong id="Edad"></strong></h2>
+    <p>Mensaje: <strong id="mensaje"></strong></p>
+
+    <script>
+      const getParameter = (key) => {
+        const address = window.location.search;
+        const parameterList = new URLSearchParams(address);
+
+        return parameterList.get(key);
+      };
+
+      const Nombre = document.getElementById("Nombre");
+      Nombre.innerText = getParameter("Nombre");
+
+      const Apellido = document.getElementById("Apellido");
+      Apellido.innerText = getParameter("Apellido");
+
+      let Correo = document.getElementById("Correo");
+      Correo.innerText = getParameter("Correo");
+
+      let telefono = document.getElementById("telefono");
+      telefono.innerText = getParameter("telefono");
+
+      function calcularEdad(fechaNacimiento) {
+        const fechaNac = new Date(fechaNacimiento);
+        const hoy = new Date();
+        const edad = hoy.getFullYear() - fechaNac.getFullYear();
+        return edad;
+      }
+
+      const fechaNacimiento = getParameter("Fecha");
+      if (fechaNacimiento) {
+        const edad = calcularEdad(fechaNacimiento);
+        document.getElementById("Edad").innerText = edad;
+      }
+
+      function validar() {
+        const contra1 = getParameter("contra");
+        const contra2 = getParameter("contra2");
+
+        if (contra1.length <= 4) {
+          return "Contraseña insegura, debe tener al menos 5 caracteres";
+        }
+        if (contra1 !== contra2) {
+          return "Las contraseñas no coinciden";
+        } else {
+          return "Contraseña segura";
+        }
+      }
+
+      const mensaje = validar();
+      const mensajeElemento = document.getElementById("mensaje");
+      mensajeElemento.innerText = mensaje;
+    </script>
+  </body>
+</html>

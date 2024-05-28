@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Persona</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <center><section class="form-register">
+    <h1>Registro de Persona</h1>
+
+    <form action="mostrar2.html" method="get" id="registrationForm">
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required><br><br>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+        
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+        
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required><br><br>
+        
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+        
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+        
+        <label for="repetirContrasena">Repetir Contraseña:</label>
+        <input type="password" id="repetirContrasena" name="repetirContrasena" required><br><br>
+        
+        <p id="mensajeError" style="color: red;"></p>
+        
+        <input type="submit" value="Registrar">
+    </section>
+        </center>
+    </form>
+
+    <script>
+        document.getElementById('registrationForm').onsubmit = function(event) {
+            var contrasena = document.getElementById('contrasena').value;
+            var repetirContrasena = document.getElementById('repetirContrasena').value;
+            var mensajeError = document.getElementById('mensajeError');
+
+            if (contrasena !== repetirContrasena) {
+                mensajeError.textContent = "Las contraseñas no coinciden";
+                event.preventDefault();
+            } else if (contrasena.length < 5) {
+                mensajeError.textContent = "La contraseña es insegura, debe tener al menos 5 caracteres";
+                event.preventDefault();
+            } else {
+                mensajeError.textContent = "";
+            }
+        };
+    </script>
+
+</body>
+</html>

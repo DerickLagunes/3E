@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Nuevo Usuario</title>
+</head>
+<body>
+
+    <div id="userInfo"></div>
+
+    <script>
+        function getQueryParams() {
+            var params = {};
+            var queryString = window.location.search.slice(1);
+            var queries = queryString.split('&');
+
+            for (var i = 0; i < queries.length; i++) {
+                var temp = queries[i].split('=');
+                params[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+            }
+
+            return params;
+        }
+
+        function calculateAge(birthdate) {
+            var today = new Date();
+            var birthDate = new Date(birthdate);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var monthDifference = today.getMonth() - birthDate.getMonth();
+
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            return age;
+        }
+
+        var params = getQueryParams();
+        var userInfoDiv = document.getElementById('userInfo');
+
+        if (params.nombres && params.apellidos && params.correo && params.fechaNacimiento && params.telefono) {
+            const nombres = params.nombres;
+            const apellidos = params.apellidos;
+            const correo = params.correo;
+            const fechaNacimiento = params.fechaNacimiento;
+            const telefono = params.telefono;
+
+            const edad = calculateAge(fechaNacimiento);
+
+            userInfoDiv.innerHTML = `
+                <h1>Nombre: ${nombres}</h1>
+                <h2>Apellido: ${apellidos}</h2>
+                <p>Correo: <a href="mailto:${correo}">${correo}</a></p>
+                <p>Teléfono: <a href="tel:${telefono}">${telefono}</a></p>
+                <p>Edad: ${edad} años</p>
+            `;
+        } else {
+            userInfoDiv.innerHTML = '<p>Error: Faltan datos del usuario.</p>';
+        }
+    </script>
+
+</body>
+</html>

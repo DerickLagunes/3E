@@ -1,0 +1,76 @@
+/* estiloForm.css */
+
+/* General styles */
+body {
+    font-family: Tahoma , Georgia, Times, 'Times New Roman';
+    background-color: #c0e8ee;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form container */
+form {
+    background: #7db8da;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Form elements */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #aaa;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="date"] {
+        width: calc(100% - 10px);
+    }
+}

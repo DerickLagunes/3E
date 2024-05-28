@@ -24,8 +24,48 @@
     <center>Mis pasatiempos jugar tipo mobas, escuchar musica y leer libros tipo fantacia</center>
         </div></center>
         <center><div style="border: 1px solid black; width: 320px; height: 420px; background-color: gray;">
-            <center><img src="IMG/img1.jpg" width="267px" height="395px"/></center>
-        </div></center>
+            <center><img src="img/imgGUSTAVO6.jpg" width="267px" height="395px"/></center>
 
+        </div></center>
+        
+        <center><div id="carrusel">
+            <img id="slideshow-img" src="" alt="Slideshow Image">
+            <div>
+                <button id="prev-btn">Anterior</button>
+                <button id="next-btn">Siguiente</button>
+            </div>
+        </div></center>
+        
+            <script >            
+                const images = [
+                    'img/imgGUSTAVO1.jpg',
+                    'img/imgGUSTAVO2.jpg',
+                    'img/imgGUSTAVO3.jpg',
+                    'img/imgGUSTAVO4.jpg',
+                    'img/imgGUSTAVO5.jpg',
+                ];
+                let currentIndex = 0;
+
+                const imgElement = document.getElementById('slideshow-img');
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+        
+                function updateImage() {
+                    imgElement.src = images[currentIndex];
+                    imgElement.style.width = '267px';
+                    imgElement.style.height = '395px';
+                }
+        
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+                    updateImage();
+                });
+        
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+                    updateImage();
+                });
+                updateImage();
+        </script>
 </body>
 </html>

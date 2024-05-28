@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Información del Usuario</h1>
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>Apellidos:</strong> <span id="apellidos"></span></p>
+    <p><strong>Correo:</strong> <a id="correo" href="#"></a></p>
+    <p><strong>Fecha de Nacimiento:</strong> <span id="fechaNacimiento"></span></p>
+    <p><strong>Número de Teléfono:</strong> <a id="numeroTelefono" href="#"></a></p>
+    <p><strong>Nombre de Usuario:</strong> <span id="nombreUsuario"></span></p>
+    <p><strong>Edad:</strong> <span id="edad"></span></p>
+    
+    <script>
+        // Función para obtener el valor de un parámetro de la URL
+        function getParameter(key) {
+            let address = window.location.search; // URL de la ventana actual
+            let parameterList = new URLSearchParams(address); // Objeto de tipo URLSearchParams
+            return parameterList.get(key); // Regresa el valor del parámetro “key”
+        }
+
+        // Función para calcular la edad a partir de la fecha de nacimiento
+        function calcularEdad(fechaNacimiento) {
+            var hoy = new Date();
+            var nacimiento = new Date(fechaNacimiento);
+            var edad = hoy.getFullYear() - nacimiento.getFullYear();
+            var m = hoy.getMonth() - nacimiento.getMonth();
+        
+            if (m < 0 || (m === 0 && hoy.getDate() < nacimiento.getDate())) {
+                edad--;
+            }
+        
+            return edad;
+        }
+
+        // Asignar los valores obtenidos de la URL a los elementos correspondientes
+        document.getElementById("nombre").innerText = getParameter("Nombre");
+        document.getElementById("apellidos").innerText = getParameter("Apellidos");
+        
+        // Asignar el correo y hacer el enlace clicable
+        let correo = getParameter("Correo");
+        document.getElementById("correo").innerText = correo;
+        document.getElementById("correo").setAttribute('href', 'mailto:' + correo);
+        
+        document.getElementById("fechaNacimiento").innerText = getParameter("FechaNacimiento");
+
+        // Asignar el número de teléfono y hacer el enlace clicable
+        let numeroTelefono = getParameter("NumeroTelefono");
+        document.getElementById("numeroTelefono").innerText = numeroTelefono;
+        document.getElementById("numeroTelefono").setAttribute('href', 'tel:' + numeroTelefono);
+        
+        document.getElementById("nombreUsuario").innerText = getParameter("NombreUsuario");
+
+        // Calcular la edad y asignarla al elemento correspondiente
+        let fechaNacimiento = getParameter("FechaNacimiento");
+        document.getElementById("edad").innerText = calcularEdad(fechaNacimiento);
+    </script>
+</body>
+</html>
+
+

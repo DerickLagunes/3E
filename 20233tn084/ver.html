@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>INFORMACIÓN</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <br><br>
+    <h1>Nombre: <strong id="nombre"></strong></h1>
+    <h1>Apellidos: <strong id="apellidos"></strong></h1>
+    <h1>Correo: <a id="correo" href="mailto:correo"><a></h1>
+    <h1>Fecha de nacimiento: <strong id="fechaNacimiento"></strong></h1>
+    <h1>Telefono: <a href="tel:telefono" id="telefono"></a></h1>
+    <h1>Usuario: <strong id="user"></strong></h1>
+    <h1>Edad: <strong id="edad"></strong></h1>
+    <p id="contra"></p>
+
+    <br><br>
+    <script>
+        function getParameter(key) {
+            let address = window.location.search;
+            let parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        document.getElementById("nombre").innerText = getParameter("nombre");
+        document.getElementById("apellidos").innerText = getParameter("apellidos");
+        let correoJ=document.getElementById("correo");
+        correoJ.innerText=getParameter("correo");
+        document.getElementById("fechaNacimiento").innerText = getParameter("fechaNacimiento");
+        let tel=document.getElementById("telefono");
+        tel.innerText=getParameter("telefono");
+        document.getElementById("user").innerText = getParameter("usuario");
+
+        let fechaNacimiento = getParameter("fechaNacimiento");
+        let edad = new Date().getFullYear() - new Date(fechaNacimiento).getFullYear();
+        document.getElementById("edad").innerText = edad;
+
+        let contr = getParameter("contraseña");
+        let contr2 = getParameter("repContraseña");
+        let contraA = document.getElementById("contra");
+
+        if (contr !== contr2) {
+            contraA.innerText = "Las contraseñas no coinciden";
+        } else if (contr.length < 5) {
+            contraA.innerText = "Contraseña insegura";
+        } else {
+            contraA.innerText = "Contraseña segura";
+        }
+    </script>
+</body>
+
+</html>

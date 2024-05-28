@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Información de la Persona</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1 id="nombres"></h1>
+    <h2 id="apellidos"></h2>
+    <a id="correo" href=""></a>
+    <a id="telefono" href=""></a>
+    <p id="edad"></p>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nombres = urlParams.get('Nombre');
+            const apellidoPaterno = urlParams.get('ApellidoPaterno');
+            const apellidoMaterno = urlParams.get('ApellidoMaterno');
+            const correo = urlParams.get('Correo');
+            const fechaNacimiento = urlParams.get('fechaNacimiento');
+            const telefono = urlParams.get('Teléfono');
+
+            document.getElementById('nombres').textContent = nombres;
+            document.getElementById('apellidos').textContent = `${apellidoPaterno} ${apellidoMaterno}`;
+            document.getElementById('correo').textContent = correo;
+            document.getElementById('correo').href = `mailto:${correo}`;
+            document.getElementById('telefono').textContent = telefono;
+            document.getElementById('telefono').href = `tel:${telefono}`;
+
+            const today = new Date();
+            const birthDate = new Date(fechaNacimiento);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            document.getElementById('edad').textContent = `Edad actual: ${age} años`;
+        }
+    </script>
+</body>
+</html>

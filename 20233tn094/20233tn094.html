@@ -1,48 +1,133 @@
 <DOCTYPE html>
+  <html lang="es">
   <head>
     <meta charset="utf-8">
     <title>20233tn094</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="Img/Planta.png">
+    <link rel="stylesheet" href="CSS/StylesLeo.css">
+    <script src='JS/ScriptLeo.js'></script>
   </head>
-  <body body background = "Img/Space.gif">
-      <style>
-          body {
-          background-image:"Marvel prro.jpg";
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-attachment: fixed;
-          }
-          </style>
+  <body>
     <center><br><table border=4>  
       <tr><td>  
-      <marquee width="1185" bgcolor="#238E23"><h1><font color="ffffff">Bienvenido a mi pagina de presentación</marquee> </td></tr> 
+      <marquee width="1185" bgcolor="#238E23"><h1><font color="ffffff">Bienvenido a mi pagina de presentación <img src = "Img/Planta.png"></marquee> </td></tr> 
       </table> 
     <br>
-    <font color = "white"><h1>Mi nombre: </h1></font>
-    <font color = "F7FF00"><h2> Leonardo Obed Sanchez Rocha</h2></font>
+    <h1>Mi nombre: </h1>
+    <h2> Leonardo Obed Sanchez Rocha</h2>
     <br>
-    <font color = "white"><h1>Mi carrera y grupo: </h1></font>
-    <font color = "F7FF00"><h2>Desarrollo de software multiplataforma 3*E</h2></font>
+    <h1>Mi carrera y grupo: </h1>
+    <h2>Desarrollo de software multiplataforma 3*E</h2>
     <br>
-    <font color = "white"><h1>Mi correo: </h1></font>
-    <font color = "F7FF00"><h2>20233tn094@utez.edu.mx</h2></font>
+    <h1>Mi correo: </h1>
+    <h2>20233tn094@utez.edu.mx</h2>
     <br>
-    <font color = "white"><h1>Mi matricula: </h1></font>
-    <font color = "F7FF00"><h2>20233tn094</h2></font>
+    <h1>Mi matricula: </h1>
+    <h2>20233tn094</h2>
     <br>
-    <font color = "white"><h1>Mis estudios: </h1></font>
-    <font color = "F7FF00"><h2>PREFECO TEMIXCO</h2></font>
+    <h1>Mis estudios: </h1>
+    <h2>PREFECO TEMIXCO</h2>
     <br><br>
-    <font color = "white"><h1>Mis pasatienpos: </h1></font>
+    <h1>Mis pasatienpos: </h1>
     <center><img src="Img/Guitar.gif"width="250"heigth="450">  <img src="Img/ejercicio.gif"width="170"heigth="350"> <img src="Img/Games.gif"width="185"heigth="350"></center>
-    <font color = "F7FF00"><h2>Tocar guitarra,  Hecer ejercicio,  Jugar videojuegos</h2></font>
+    <h2>Tocar guitarra,  Hecer ejercicio,  Jugar videojuegos</h2>
     <input type="button" value="saludar" onclick="print();"></center>
-    <script>
-      function print(){
-          alert("¡Hola!, esta pagina fue hecha para la UTEZ");
-      }
-    </script>
+    <br>
+    <marquee class="Indicacion"><font size =10>Mira el sonido que hace cada pájaro</marquee></font> 
+    <br>
+    <div class="carousel">
+      <button class="lado" id="retroceder"><b><<</b></button>
+      <div id="imagen"></div>
+      <button class="lado" id="avanzar"><b>>></b></button>
+    </div>
+    <center><div class="controles">
+      <br>
+      <button id="play">Play</button>
+      <button id="stop" disabled>Stop</button>
+      <p><button id="hear">Escuchar</button></p>
+      <script>
+        const IMAGENES = 
+        [
+            'Img/Red.jpg',
+            'Img/Chuck.jpg',
+            'Img/Bomb.jpg',
+            'Img/Terrence.jpg',
+            'Img/Aguila.jpg'
+        ];
+        const SONIDOS = 
+        [
+            new Audio('Sounds/Red.mp3'),
+            new Audio('Sounds/Chuck.mp3'),
+            new Audio('Sounds/Bomb.mp3'),
+            new Audio('Sounds/Terrence.mp3'),
+            new Audio('Sounds/Aguila.mp3')
+        ]
+        const TIEMPO_INTERVALO_MILESIMAS_SEG = 2000;
+
+        let posicionActual = 0;
+        let $imagen = document.querySelector('#imagen');
+        let intervalo;
+        let intervalo2;
+
+        function pasarFoto() 
+        {
+        if (posicionActual >= IMAGENES.length - 1) {
+          posicionActual = 0;
+        } else {
+          posicionActual++;
+        }
+        renderizarImagen();
+        }
+
+        function retrocederFoto() 
+        {
+        if (posicionActual <= 0) {
+          posicionActual = IMAGENES.length - 1;
+        } else {
+          posicionActual--;
+        }
+        renderizarImagen();
+        }
+
+        function renderizarImagen() 
+        {
+        $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;
+        }
+
+        function iniciarSonido()
+        {
+          SONIDOS[posicionActual].play();
+        }
+
+        function playIntervalo()
+        {
+        intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+        document.querySelector('#avanzar').setAttribute('disabled', true);
+        document.querySelector('#retroceder').setAttribute('disabled', true);
+        document.querySelector('#play').setAttribute('disabled', true);
+        document.querySelector('#hear').setAttribute('disabled', true);
+        document.querySelector('#stop').removeAttribute('disabled');
+        }
+
+        document.querySelector('#avanzar').addEventListener('click', pasarFoto);
+        document.querySelector('#retroceder').addEventListener('click', retrocederFoto);
+        document.querySelector('#play').addEventListener('click', playIntervalo);
+        document.querySelector('#hear').addEventListener('click', iniciarSonido);
+        document.querySelector('#stop').addEventListener('click', () => 
+        {
+        clearInterval(intervalo);
+        document.querySelector('#avanzar').removeAttribute('disabled');
+        document.querySelector('#retroceder').removeAttribute('disabled');
+        document.querySelector('#play').removeAttribute('disabled');
+        document.querySelector('#hear').removeAttribute('disabled');
+        document.querySelector('#stop').setAttribute('disabled', true);
+        });
+
+        // Inicializar con la primera imagen
+        renderizarImagen();
+      </script>
+  </div></center>
   </body>
   </meta>
 </html>

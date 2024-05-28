@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <form action="Verpersona.html" method="get">
+        <label>Nombre:
+            <input type="text" name="Nombre" required placeholder="Ingresa tu nombre" maxlength="50" />
+            <br>
+            <label>Apellido:
+            <input type="text" name="Apellido" required placeholder="Ingresa tu Apellido" maxlength="50" />
+            <br>
+            <label>Correo:
+            <input type="text" name="Correo" required placeholder="Ingresa tu Correo" maxlength="50" />
+            <br>
+        </label>
+        <label> Fecha de nacimiento:
+            <input type="date" name="Fecha" />
+        </label>
+
+        <br>
+        <label> Numero de telefono:
+            <input type="text" name="telefono" text="Ingresa tu numero" maxlength="10" />
+        </label>
+
+        <br>
+        </label>
+
+        <label> Ingresa tu usuario:
+            <input type="text" name="usuario" placeholder="Ingresa el Usuario" />
+        </label>
+
+        <br>
+        <label> Ingresa tu contraseña:
+            <input type="password" name="contra" placeholder="Ingresa tu contraseña" />
+        </label>
+
+        <br>
+        <label> Ingresa nuevamente tu contraseña:
+            <input type="password" name="contra2" placeholder="Ingresa nuevamente tu contraseña" />
+            <br>
+
+            <input type="submit" value="Registrar Datos" />
+        </label>
+
+    </form>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search; // url de la ventana actual 
+            //Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            //Regresa el valor del parámetro “key”
+            return parameterList.get(key);
+        }
+
+
+    </script>
+</body>
+
+</html>

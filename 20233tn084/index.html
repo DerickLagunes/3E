@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO_GET</title>
+    <script src='main.js'></script>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input:invalid {
+    border-color: #dc3545;
+}
+
+input:invalid:focus {
+    box-shadow: 0 0 5px #dc3545;
+}
+</style>
+<body>
+
+    <form action="ver.html" method="get">
+        <label>Nombre:
+            <input type="text" name="nombre" required placeholder="Ingresa tu nombre" maxlength="20">
+        </label> <br><br>
+        <label>Apellidos:
+            <input type="text" name="apellidos" required placeholder="Ingresa tus apellidos" maxlength="40">
+        </label><br><br>
+        <label>Correo:
+            <input type="text" name="correo" required placeholder="Ingresa tu correo" maxlength="40">
+        </label><br><br>
+        <label>fecha de nacimiento:
+            <input type="date" name="fechaNacimiento" placeholder ="Fecha de nacimiento">
+        </label><br><br>
+        <label>Telefono:
+            <input type="number" name="telefono" placeholder ="Ingresa tu número de teléfono" maxlength="12">
+        </label><br><br>
+        <label>Usuario:
+            <input type="text" name="usuario" placeholder ="Ingresa nombre de usuario" maxlength="20">
+        </label><br><br>
+        <label>Contraseña:
+            <input type="password" name="contraseña"placeholder ="Ingresa tu contraseña" maxlength="20">
+        </label><br><br>
+        <label>Repetir contraseña:
+            <input type="password" name="repContraseña"placeholder ="Ingresa nuevamente tu contraseña" maxlength="20">
+        </label><br><br>
+
+        <input type ="submit" value="INGRESAR"/>
+    </form>
+    <script>
+        getParameter = (key) => {
+          address = window.location.search; //  url de la ventana actual 
+
+          // Objeto de tipo URLSearchParams
+          parameterList = new URLSearchParams(address); 
+
+          // Regresa el valor del parámetro “key”
+          return parameterList.get(key);
+      
+      }
+      console.log(getParameter("nombre"));
+
+      </script>
+</body>
+</html>

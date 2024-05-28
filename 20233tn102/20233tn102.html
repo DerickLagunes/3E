@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Cristian Amauri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: "Helvetica";
+        background-color: #ffffff;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .gallery-container {
+        width: 80%;
+        margin: 20px auto;
+        text-align: center;
+        background-color: #e0e0ff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #5c5cd6;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #7a7abf;
+      }
+      .texto {
+        width: 80%;
+        margin: 20px auto;
+        text-align: center;
+        background-color: #e0e0ff;
+        border-radius: 5px;
+      }
+      table {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="texto">
+      <center>
+        <table>
+          <tr>
+            <th>
+              <h1>Cristian Amauri Gonzaga Castañeda</h1>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <p>DSM 3-E</p>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <p>20233tn102@utez.edu.mx</p>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <p>Estudie en el cecyte, no vale la pena</p>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <p>
+                Mis pasatiempos son escuchar musica, dibujar y salir a caminar
+              </p>
+            </th>
+          </tr>
+        </table>
+      </center>
+    </div>
+
+    <div class="gallery-container">
+      <button id="prev">Anterior</button>
+      <img id="image" src="" alt="Imagen de presentación" />
+      <button id="next">Siguiente</button>
+    </div>
+    <script>
+      const images = [
+        "./img/GC1.jpg",
+        "./img/GC2.jpg",
+        "./img/GC3.jpg",
+        "./img/GC4.jpg",
+        "./img/GC5.jpg",
+      ];
+      let currentIndex = 0;
+      function updateImage(index) {
+        const imageElement = document.getElementById("image");
+        imageElement.src = images[index];
+      }
+      document.getElementById("prev").addEventListener("click", function () {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+        updateImage(currentIndex);
+      });
+      document.getElementById("next").addEventListener("click", function () {
+        currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+        updateImage(currentIndex);
+      });
+      updateImage(0);
+    </script>
+  </body>
+</html>

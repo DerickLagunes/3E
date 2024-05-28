@@ -3,23 +3,96 @@
 <head>
     <style>
         p{
-            color: red;
+            color: rgb(255, 255, 255);
         }
 
         body{
-            background-color: black;
+            background-color: rgb(71, 69, 69);
+            text-align: center;
         }
+
+        #atras{
+            height: 20%;
+            width: 10%;
+            color: aliceblue;
+            background-color: black;
+            border-style: none;
+            margin-right: 1%;
+        }
+
+        #siguiente{
+            height: 20%;
+            width: 10%;
+            color: aliceblue;
+            background-color: black;
+            border-style: none;
+        }
+
+        #atras:hover{
+            transform: scale(1.2);
+            transition: 0.4s;
+            color: aliceblue;
+            background-color: rgb(175, 19, 19);
+        }
+
+        #siguiente:hover{
+            transform: scale(1.2);
+            transition: 0.4s;
+            color: aliceblue;
+            background-color: rgb(175, 19, 19);
+        }
+
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <p>AXEL YOSHUA PEDROZA GARCIA</p>
-    <p>3°E DESARROLLO DE SOFTWARE MULTIPLATAFORMA</p>
-    <p>20233TN089@UTEZ.EDU.MX</p>
-    <p>20233TN089</p>
-    <p>MEDIA SUPERIOR</p>
-    <p>ESCUCHAR MUSICA Y LEER</p>
+    <div>
+        <p>AXEL YOSHUA PEDROZA GARCIA</p>
+        <p>3°E DESARROLLO DE SOFTWARE MULTIPLATAFORMA</p>
+        <p>CORREO: 20233TN089@UTEZ.EDU.MX</p>
+        <p>MATRICULA: 20233TN089</p>
+        <p>ESTUDIOS: MEDIA SUPERIOR</p>
+        <p>PASATIEMPOS: ESCUCHAR MUSICA Y LEER</p>
+    </div>
+    <br><br>
+    <div id="carrusel">
+        <img id="img" src="" alt="">
+    </div>
+    <button id="atras">Atras</button>
+    <button id="siguiente">Siguiente</button>
+
+    <script>
+        const arregloImagenes = [
+            'img/aku1.jpg',
+            'img/aku2.jpg',
+            'img/aku3.jpg',
+            'img/aku4.jpg',
+            'img/aku5.jpg',
+        ];
+
+        let imagenInicial = 0;
+        const carouselImage = document.getElementById('img');
+        let botonAtras = document.getElementById('atras');
+        let botonSiguiente = document.getElementById('siguiente');
+
+        function muestraImagen() {
+            img.src = arregloImagenes[imagenInicial];
+        }
+        
+        muestraImagen();
+
+        botonAtras.addEventListener('click', () => {
+            imagenInicial = (imagenInicial - 1 + arregloImagenes.length) % arregloImagenes.length;
+            muestraImagen();
+        });
+
+        botonSiguiente.addEventListener('click', () => {
+            imagenInicial = (imagenInicial + 1) % arregloImagenes.length;
+            muestraImagen();
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+    background-image: linear-gradient(to right top, #851937, #004d7a, #00bf72, #a8eb12);
+}
+@font-face {
+    font-family: 'Blockletter';
+    src: url('Blockletter.otf') 
+}
+.Titulo{
+    font-family: 'Blockletter';
+    font-size:50px;
+    color: #FFC300;
+    -webkit-text-stroke: 1px #ff3300;
+}
+table{
+    margin: auto;
+    font-family: monospace;
+    text-align: left;
+}
+.datos{
+    color:whitesmoke;
+}
+.laContra{
+    color:whitesmoke;
+    font-family:monospace;
+    text-align: center;
+}
+strong{
+    font-style: italic;
+}

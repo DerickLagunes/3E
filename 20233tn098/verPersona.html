@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ver Persona</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/Formulario.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="details-container">
+        <center> 
+        <h1>DATOS RECIBIDOS:</h1>
+        <h1>Nombres: <strong id="names"></strong></h1>
+        <h2>Apellidos: <strong id="lastnames"></strong></h2>
+        <strong>Correo: </strong><a href="mailto:correo" id="email"></a><br>
+        <strong>Fecha de nacimiento: <strong id="birthAge"></strong></strong><br>
+        <strong>Teléfono: </strong><a href="tel:telefono" id="telephone"></a><br>
+        <strong>Usuario: <strong id="user"></strong></strong><br>
+        <strong>Edad: <strong id="age"></strong><Strong> años</Strong></strong>
+        <p id="passwords"></p>
+        </center>
+    </div>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search; // url de la ventana actual
+            //Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            //Regresa el valor del parámetro “key”
+            return parameterList.get(key);
+        }
+
+        //Nombres
+        let names = document.getElementById("names");
+        names.innerText = getParameter("nombres");
+
+        //Apellidos
+        let lastnames = document.getElementById("lastnames");
+        lastnames.innerText = getParameter("apellidos");
+
+        //Correo
+        const correo = getParameter("correo");
+        document.getElementById("email").href = `mailto:${correo}`;
+        document.getElementById("email").innerText = correo;
+
+        //Fecha de nacimiento
+        let birthAge = document.getElementById("birthAge"); 
+        birthAge.innerText = getParameter("fechaNacimiento");
+
+        //Teléfono
+        const telefo = getParameter("telefono");
+        document.getElementById("telephone").href = `tel:${telefo}`;
+        document.getElementById("telephone").innerText = telefo;
+
+        //Edad
+        let age = document.getElementById("age");
+        let currentAge = (new Date().getFullYear()) - (new Date(getParameter("fechaNacimiento")).getFullYear());
+        age.innerText = currentAge;
+
+        //Nombre de usuario
+        let user = document.getElementById("user"); 
+        user.innerText = getParameter("usuario");
+
+        //Contraseñas
+        let pass = getParameter("contrasenia");
+        let pass2 = getParameter("confirmarContrasenia");
+        let passwords = document.getElementById("passwords");
+
+        if (pass != pass2) {
+            passwords.innerText = "Las contraseñas no coinciden"
+        } else if (pass.length < 5) {
+            passwords.innerText = "Tus contraseñas coinciden. Tus contraseñas son inseguras, tienen menos de 5 caracteres"
+        } else {
+            passwords.innerText = "Tus contraseñas coinciden y son seguras"
+        }
+    </script>  
+</body>
+</html>

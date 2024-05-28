@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Resultados</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Nombre: <strong id="nom"></strong></h1>
+    <br>
+    <h1>Apellido: <strong id="appe"></strong></h1>
+    <br>
+    Correo: <a href="mailto:" id="corr"></a>
+    <br>
+    Teléfono: <a href="" id="tel"></a>
+    <p id="edad">Edad</p>
+
+    <p id="mensaje" style="color: red;"></p>
+
+    <script>
+        getParameter = (key) => {
+            const address = window.location.search;
+            const parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        const calcularEdad = (fechaNacimiento) => {
+            const fechaNac = new Date(fechaNacimiento);
+            const hoy = new Date();
+            let edad = hoy.getFullYear() - fechaNac.getFullYear();
+            const mes = hoy.getMonth() - fechaNac.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+                edad--;
+            }
+            return edad;
+        }
+
+        // Obtener valores de los parámetros de la URL
+        const nombre = getParameter("nombre");
+        const apellido = getParameter("Apellido");
+        const correo = getParameter("correo");
+        const nacimiento = getParameter("fecha");
+        const tel = getParameter("telefono");
+        const password1 = getParameter("contra");
+        const password2 = getParameter("verificaContra");
+
+        // Actualizar el contenido de los elementos HTML con los valores obtenidos
+        document.getElementById("nom").innerText = nombre;
+        document.getElementById("appe").innerText = apellido;
+        document.getElementById("corr").href = `mailto:${correo}`;
+        document.getElementById("corr").innerText = correo;
+        document.getElementById("tel").href = `tel:${tel}`;
+        document.getElementById("tel").innerText = tel;
+
+        const edad = calcularEdad(nacimiento);
+        document.getElementById("edad").innerText = `Edad: ${edad} años`;
+
+        // Comprobar las contraseñas y mostrar mensajes correspondientes
+        const passwordMessage = document.getElementById('mensaje');
+        if (password1 !== password2) {
+            passwordMessage.textContent = 'Las contraseñas no coinciden';
+        } else if (password1.length < 5) {
+            passwordMessage.textContent = 'Su contraseña es insegura';
+        } else {
+            passwordMessage.textContent = 'Las contraseñas coinciden y son seguras.';
+        }
+    </script>
+</body>
+</html>

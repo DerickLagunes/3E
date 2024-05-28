@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+</head>
+<body>
+<form action="verPersona.html" method="get" onsubmit="return validarContrasenas()">
+    <br>
+    <label> Nombre: 
+        <input type="text" name="Nombre" required placeholder="Ingrese su Nombre" maxlength="20" />   
+    </label>
+    <br>
+    <label>Apellidos: 
+        <input type="text" name="Apellidos" required placeholder="Ingrese sus Apellidos" >
+    <br>
+    </label>
+    <label>Correo:  
+        <input type="email" name="Correo" required placeholder="Ingrese su Correo"/>
+    </label> 
+    <br>
+    <label>Fecha de Nacimiento:  
+        <input type="date" name="FechaNacimiento"  required placeholder="Ingrese su fecha de Nacimiento" />
+    </label> 
+    <br>
+    <label>Número de teléfono:
+        <input type="number" name="NumeroTelefono" required placeholder="Ingrese el Número de teléfono"/>
+    </label>
+    <br>
+    <label>Usuario:
+        <input type="text" name="NombreUsuario" required placeholder="Ingrese su nombre de Usuario">   
+    </label>
+    <br>
+    <label>Contraseña:
+        <input type="password" id="contrasena1" required placeholder="Ingrese una contraseña">   
+    </label>
+    <br>
+    <label>Confirmar Contraseña:
+        <input type="password" id="contrasena2" required placeholder="Confirme la contraseña">
+    </label>
+    <br>
+    <span id="mensaje"></span>
+    <br>
+    <label>
+        <input type="submit" id="Enviar formulario" value="enviar">
+    </label>
+</form>
+
+<script>
+function validarContrasenas() {
+    var contrasena1 = document.getElementById("contrasena1").value;
+    var contrasena2 = document.getElementById("contrasena2").value;
+
+    if (contrasena1 !== contrasena2) {
+        document.getElementById("mensaje").innerHTML = "Las contraseñas no coinciden";
+        return false; // Evita que el formulario se envíe si las contraseñas no coinciden
+    } else {
+        document.getElementById("mensaje").innerHTML = "";
+        return true; // Permite enviar el formulario si las contraseñas coinciden
+    }
+}
+getParameter = (key) => {
+address = window.location.search; //url de la ventana actual 
+//Objeto de tipo URLSearchParams
+ parameterList = new URLSearchParams(address); 
+//Regresa el valor del parámetro “key”
+return parameterList.get(key);
+}
+
+console.log(getParameter("VerPersona"));
+
+
+</script>
+</body>
+</html>

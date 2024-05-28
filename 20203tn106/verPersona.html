@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1>ESTOS SON TUS DATOS</h1>
+    <h1>Nombre: <strong id="Anombre"></strong></h1>
+    <br><br>
+    <h2>Apellidos: <strong id="Aapellidos"></strong></h2>
+    <br><br>
+    <strong>Correo: </strong><a href="mailto:correo" id="Acorreo"></a><br>
+    <br><br>
+    <strong>Fecha de nacimiento: <strong id="fNac"></strong></strong><br>
+    <br><br>
+    <strong>Telefono: </strong><a href="tel:telefono" id="Atel"></a><br>
+    <br><br>
+    <strong>Usuario: <strong id="us"></strong></strong><br>
+    <br><br>
+    <strong>Edad: <strong id="Aedad"></strong></strong>
+    <br><br>
+    <p id="contra"></p>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search; // url de la ventana actual
+            //Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            //    Regresa el valor del parámetro “key”
+            return parameterList.get(key);
+        }
+    
+        //NOMBRE
+        let Anombre=document.getElementById("Anombre");
+        Anombre.innerText=getParameter("nombre");
+        //APELLIDO
+        let Aapellidos=document.getElementById("Aapellidos"); 
+        Aapellidos.innerText=getParameter("apellidos");
+        //CORREO
+        let Acorreo=document.getElementById("Acorreo");
+        Acorreo.innerText=getParameter("correo");
+        //FECHA NACIMIENTO
+        let Anac=document.getElementById("fNac"); 
+        Anac.innerText=getParameter("fechaNa");
+        //TELEFONO
+        let Atel=document.getElementById("Atel");
+        Atel.innerText=getParameter("telefono");
+        //EDAD
+        let Aedad=document.getElementById("Aedad"); 
+        let edad=(new Date().getFullYear())-(new Date(getParameter("fechaNa")).getFullYear());
+        Aedad.innerText=edad;
+        //USUARIO
+        let us=document.getElementById("us");
+        us.innerText=getParameter("usuario");
+        //CONTRASEÑA
+        let contra1=getParameter("contrasena1");
+        let contra2=getParameter("contrasena2");
+        let contras=document.getElementById("contra");
+        if(contra1!=contra2){
+            contras.innerText="TU CONTRASEÑA NO COINCIDEN"
+        }
+        else 
+        if(contra1.length <5){
+            contras.innerText="TUS CONTRASEÑAS SON INCORRECTAS, Y ES MUY CORTA DEBE DE TENER AL MENOS 12 DIJITOS"
+        }
+        else{
+            contras.innerText="TU CONTRASEÑA ES SEGURA"
+        }
+        
+      
+        </script>
+</body>
+</html>

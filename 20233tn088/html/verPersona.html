@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Información del Usuario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .info-container {
+            background-color: #d7dfff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+        }
+        .info-container h1, .info-container h2, .info-container p {
+            margin: 10px 0;
+        }
+       
+        
+    </style>
+</head>
+<body>
+  <br><br>
+    <div class="info-container">
+        <h1>Nombre: <strong id="nombre"></strong></h1>
+        <h2>Apellidos: <strong id="apellidos"></strong></h2>
+        <p>Correo: <a href="mailto: correo" id="correoElec"></a></p>
+        <p>Edad: <strong id="edadPerso"></strong></p>
+        <p>Teléfono: <a href="tel: telefono" id="tele"></a></p>
+        <p>Usuario: <strong id="user"></strong></p>
+        <p id="contra"></p>
+    </div>
+    <br><br>
+    <script>
+        getParameter = (key) => {
+            address = window.location.search; //url de la ventana actual
+            //Objeto de tipo URLSearchParams
+            parameterList = new URLSearchParams(address);
+            //Regresa el valor del parámetro “key”
+            return parameterList.get(key);
+        };
+
+        let nombrePersona = document.getElementById("nombre"); 
+        nombrePersona.innerText = getParameter("nombres");
+
+        let apellidosPersona = document.getElementById("apellidos");
+        apellidosPersona.innerText = getParameter("apellidos");
+
+        let correoPersona = document.getElementById("correoElec");
+        correoPersona.innerText = getParameter("correo");
+        correoPersona.href = "mailto:" + getParameter("correo");
+
+        let edadPersona = document.getElementById("edadPerso");
+        let objecDate = new Date(getParameter("fechaNacimiento"));
+        let añoDate = objecDate.getFullYear();
+        edadPersona.innerText = 2024 - añoDate;
+
+        let telPersona = document.getElementById("tele");
+        telPersona.innerText = getParameter("telefono");
+        telPersona.href = "tel:" + getParameter("telefono");
+
+        let userPersona = document.getElementById("user");
+        userPersona.innerText = getParameter("usuario");
+
+        let contra1 = getParameter("contraseña");
+        let contra2 = getParameter("contraseña1");
+        let contrase = document.getElementById("contra");
+        if (contra1 != contra2) {
+            contrase.innerText = "Las contraseñas no coinciden.";
+        } else if (contra1.length < 5) {
+            contrase.innerText = "La contraseña es insegura.";
+        } else {
+            contrase.innerText = "Contraseña segura.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+20233tn088 Aguilar Popoca Angel Daniel
+<<<<<<< HEAD
+20233tn127 Arizmendi Aguilar Cesar Leonardo
+<<<<<<<----------->>>>>>>>>>>>>
+20233tn073 Montes Patiño Oscar Uriel
+<<<<<<<----------->>>>>>>>>>>>>
+20233tn094 Sanchez Rocha Leonardo Obed
+======
+20233tn089 Pedroza Garcia Axel Yoshua
+=======
+20233tn239 Cereth Alarcon Francisco
+=======
+20233TN119 Garcia Guadarrama Edwin Yair
+>>>>>>> 
+20233tn121 Onofre Badillo Mauricio
+<<<<<<< HEAD
+<<<<<<<
+20233tn123 Miranda Mendez Brando 
+=======
+<<<<<<< HEAD
+<<<<<<<
+20233tn066 Esquivel Castillo Juan Pablo
+<<<<<<<
+=======
+<<<<<<< 
+20233tn102 Gonzaga Castañeda Cristian Amauri
+<<<<<<< HEAD
+>>>>>>> eaa327792c9638f1e44cdb0f95f4b8dab5b24dd9
+=======
+<<<<<<<<
+20233tn075 Mondragón Quintanar Alan
+>>>>>>> 995e5d0efb56d58cedd7b14af2342ce47e03fac0
+<<<<<<< HEAD
+>>>>>>> 8b576235307c433d40ba29ebe8b0ee7a0e80c720
+=======
+=======
+<<<<<<<<
+20233tn096 Román Jiménez Salem
+>>>>>>>>
+>>>>>>> 286a42d59c774d126b31e4f51c97371ee94cd7f3
+
+20233tn110 Barrera Calderon Jonathan Alberto
+
+20233tn098 Bertadillo Villalobos Leobardo Daniel 
+<<<<<<<<<<<<<<<<<<<
+20233tn063 Roque Ocampo Maximiliano
+<<<<<<<<<<<<<<<<<<<<
+20233tn100 Vargas Lopez Yoni Gabriel 
+20233tn130 Arizmendi Aguilar Ignacio Isai
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+20233tn118 Hernandez Trujillo Otmar
+==================
+20233tn103 Ortuño Rogel Angel Gustavo
+=================
+<<<<<<< HEAD
+20233tn084 Millán Millán Janetthe 
+=================
+=======
+20233tn114 CATARINO MERINO FREDY JULIAN 
+>>>>>>> bf6e09111d5b0d5b9b382c9738e1b574aae5a391
+
+20203tn106 Rodriguez Guzman Alexis Giovanni
+
+20233tn120 Mijangos Beltran Leonardo Daniel
+

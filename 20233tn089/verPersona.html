@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NOMBRE(S): <strong id="nombre"></strong></h1>
+    <h2>APELLIDO(S): <strong id="apellidos"></strong></h2>
+    <a href="mailto:" id="correoElectronico">ENVIAR CORREO</a>
+    <br><br>
+    <a href="tel:" id="numeroTelefonico"></a>
+    <p id="fechaNacimiento"></p>
+    <p id="nombreUsuario"></p>
+    <p id="resultadoEdad"></p>
+    <p id="resultadoClave"></p>
+
+    <script>
+        const getParameter = (key) => {
+            const address = window.location.search;
+            const parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        const nombre = document.getElementById("nombre");
+        nombre.innerText = getParameter("nombre");
+
+        const apellidos = document.getElementById("apellidos");
+        apellidos.innerText = getParameter("apellidos");
+
+        const correoElectronico = document.getElementById("correoElectronico");
+        const correoValue = getParameter("correoElectronico");
+        correoElectronico.href = `mailto:${correoValue}`;
+        correoElectronico.innerText = "ENVIAR CORREO";
+
+        const fechaNacimientoElem = document.getElementById("fechaNacimiento");
+        const fechaNacimientoValue = getParameter("fechaNacimiento");
+        fechaNacimientoElem.innerText = `Fecha de Nacimiento: ${fechaNacimientoValue}`;
+
+        const numeroTelefonico = document.getElementById("numeroTelefonico");
+        const numeroTelefonicoValue = getParameter("numeroTelefonico");
+        numeroTelefonico.href = `tel:${numeroTelefonicoValue}`;
+        numeroTelefonico.innerText = `Teléfono: ${numeroTelefonicoValue}`;
+
+        const nombreUsuario = document.getElementById("nombreUsuario");
+        nombreUsuario.innerText = `Usuario: ${getParameter("nombreUsuario")}`;
+
+        const insertarClave = getParameter("insertarClave");
+        const verificarClave = getParameter("verificarClave");
+
+        const fechaActual = new Date();
+        const fechaNacimiento = new Date(fechaNacimientoValue);
+        let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+        const diferenciaMeses = fechaActual.getMonth() - fechaNacimiento.getMonth();
+        if (diferenciaMeses < 0 || (diferenciaMeses === 0 && fechaActual.getDate() < fechaNacimiento.getDate())) {
+            edad--;
+        }
+
+        const resultadoEdad = document.getElementById("resultadoEdad");
+        resultadoEdad.innerText = `Edad: ${edad} años`;
+
+        const resultadoClave = document.getElementById("resultadoClave");
+        if (insertarClave === verificarClave) {
+            resultadoClave.innerText = "Las claves son iguales";
+        } else {
+            resultadoClave.innerText = "Las claves no son iguales";
+        }
+    </script>
+</body>
+</html>

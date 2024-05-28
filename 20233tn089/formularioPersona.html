@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <form action="verPersona.html">
+        <label>Nombre:
+            <input type="text" name="nombre" required placeholder="Ingrese nombre(s)" maxlength="90">
+        </label>
+        <br><br>
+        <label>Apellidos:
+            <input type="text" name="apellidos" required placeholder="Ingrese Apellido(s)" maxlength="90">
+        </label>
+        <br><br>
+        <label>Correo electronico:
+            <input type="email" name="correoElectronico" required placeholder="Ingrese correo electronico" maxlength="30">
+        </label>
+        <br><br>
+        <label>Fecha de nacimiento:
+            <input type="date" name="fechaNacimiento"/>
+        </label>
+        <br><br>
+        <label>Telefono
+            <input type="tel" name="numeroTelefonico" required placeholder="Ingrese telefono" minlength="10" maxlength="10">
+        </label>
+        <br><br>
+        <label>Usuario:
+            <input type="text" name="nombreUsuario" required placeholder="Ingrese usuario a utilizar" maxlength="20"/>
+        </label>
+        <br><br>
+        <label>Contraseña:
+            <input type="password" name="insertarClave" placeholder="Ingrese la contraseña a utilizar" minlength="5">
+        </label>
+        <br><br>
+        <label>Repetir contraseña:
+            <input type="password" name="verificarClave" placeholder="Repita la contraseña" minlength="">
+        </label>
+        <br><br>
+        <input type="submit" value="Registrar" />
+    </form>
+
+</body>
+</html>

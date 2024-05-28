@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Persona</title>
+    <link rel="stylesheet" href="estilos2.css">
+    <script>
+        function mostrarInformacion() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nombres = urlParams.get('nombres');
+            const apellidos = urlParams.get('apellidos');
+            const correo = urlParams.get('correo');
+            const telefono = urlParams.get('telefono');
+            const fechaNacimiento = urlParams.get('fechaNacimiento');
+            const contrasena = urlParams.get('contrasena');
+            const repetirContrasena = urlParams.get('repetirContrasena');
+
+            // Calcular la edad actual
+            const hoy = new Date();
+            const fechaNac = new Date(fechaNacimiento);
+            let edad = hoy.getFullYear() - fechaNac.getFullYear();
+            const mes = hoy.getMonth() - fechaNac.getMonth();
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+                edad--;
+            }
+
+            // Mostrar la información
+            document.getElementById("nombreMostrado").innerText = nombres;
+            document.getElementById("apellidoMostrado").innerText = apellidos;
+            document.getElementById("correoMostrado").href = `mailto:${correo}`;
+            document.getElementById("correoMostrado").innerText = correo;
+            document.getElementById("telefonoMostrado").href = `tel:${telefono}`;
+            document.getElementById("telefonoMostrado").innerText = telefono;
+            document.getElementById("edadMostrada").innerText = `${edad} años`;
+
+            // Validaciones de contraseña
+            const mensajeElement = document.getElementById("mensajeContrasena");
+            if (contrasena !== repetirContrasena) {
+                mensajeElement.textContent = "Las contraseñas no coinciden";
+            } else if (contrasena.length < 5) {
+                mensajeElement.textContent = "La contraseña es insegura";
+            } else {
+                mensajeElement.textContent = "";
+            }
+        }
+    </script>
+</head>
+<body onload="mostrarInformacion()">
+    <div class="container">
+        <h1>Información del Usuario</h1>
+        <table>
+            <tr>
+                <th>Nombres</th>
+                <td id="nombreMostrado"></td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td id="apellidoMostrado"></td>
+            </tr>
+            <tr>
+                <th>Correo</th>
+                <td><a id="correoMostrado" href=""></a></td>
+            </tr>
+            <tr>
+                <th>Teléfono</th>
+                <td><a id="telefonoMostrado" href=""></a></td>
+            </tr>
+            <tr>
+                <th>Edad</th>
+                <td id="edadMostrada"></td>
+            </tr>
+        </table>
+        <p id="mensajeContrasena"></p>
+    </div>
+</body>
+</html>
+

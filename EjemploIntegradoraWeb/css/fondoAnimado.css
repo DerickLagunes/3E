@@ -1,0 +1,18 @@
+.fondo_animado {
+	background: linear-gradient(-45deg, rgb(0, 0, 0), grey, darkgrey,  white);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	height: 100%;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
